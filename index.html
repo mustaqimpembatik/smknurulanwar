@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<!-- Mirrored from sman20batam.sch.id/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Feb 2025 02:27:40 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<title>SMK NURUL ANWAR &#8211; C.E.R.D.A.S. Berkarakter &#8211; (C)akap. (E)tika. (R)eligius. (D)igital. (A)sri. (S)istematis.</title>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='http://static.addtoany.com/' />
+<link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+<link rel="alternate" type="application/rss+xml" title="SMK NURUL ANWAR - C.E.R.D.A.S. Berkarakter &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="SMK NURUL ANWAR - C.E.R.D.A.S. Berkarakter &raquo; Comments Feed" href="comments/feed/index.html" />
+<link rel="alternate" type="text/calendar" title="SMK NURUL ANWAR - C.E.R.D.A.S. Berkarakter &raquo; iCal Feed" href="events/indexedf3.html?ical=1" />
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"wpemoji":"https:\/\/sman20batam.sch.id\/wp-includes\/js\/wp-emoji.js?ver=6.1.1","twemoji":"https:\/\/sman20batam.sch.id\/wp-includes\/js\/twemoji.js?ver=6.1.1"}};
+/**
+ * @output wp-includes/js/wp-emoji-loader.js
+ */
+
+( function( window, document, settings ) {
+	var src, ready, ii, tests;
+
+	// Create a canvas element for testing native browser support of emoji.
+	var canvas = document.createElement( 'canvas' );
+	var context = canvas.getContext && canvas.getContext( '2d' );
+
+	/**
+	 * Checks if two sets of Emoji characters render the same visually.
+	 *
+	 * @since 4.9.0
+	 *
+	 * @private
+	 *
+	 * @param {number[]} set1 Set of Emoji character codes.
+	 * @param {number[]} set2 Set of Emoji character codes.
+	 *
+	 * @return {boolean} True if the two sets render the same.
+	 */
+	function emojiSetsRenderIdentically( set1, set2 ) {
+		var stringFromCharCode = String.fromCharCode;
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+		context.fillText( stringFromCharCode.apply( this, set1 ), 0, 0 );
+		var rendered1 = canvas.toDataURL();
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, canvas.width, canvas.height );
+		context.fillText( stringFromCharCode.apply( this, set2 ), 0, 0 );
+		var rendered2 = canvas.toDataURL();
+
+		return rendered1 === rendered2;
+	}
+
+	/**
+	 * Detects if the browser supports rendering emoji or flag emoji.
+	 *
+	 * Flag emoji are a single glyph made of two characters, so some browsers
+	 * (notably, Firefox OS X) don't support them.
+	 *
+	 * @since 4.2.0
+	 *
+	 * @private
+	 *
+	 * @param {string} type Whether to test for support of "flag" or "emoji".
+	 *
+	 * @return {boolean} True if the browser can render emoji, false if it cannot.
+	 */
+	function browserSupportsEmoji( type ) {
+		var isIdentical;
+
+		if ( ! context || ! context.fillText ) {
+			return false;
+		}
+
+		/*
+		 * Chrome on OS X added native emoji rendering in M41. Unfortunately,
+		 * it doesn't work when the font is bolder than 500 weight. So, we
+		 * check for bold rendering support to avoid invisible emoji in Chrome.
+		 */
+		context.textBaseline = 'top';
+		context.font = '600 32px Arial';
+
+		switch ( type ) {
+			case 'flag':
+				/*
+				 * Test for Transgender flag compatibility. This flag is shortlisted for the Emoji 13 spec,
+				 * but has landed in Twemoji early, so we can add support for it, too.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (white flag emoji + transgender symbol).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 0x1F3F3, 0xFE0F, 0x200D, 0x26A7, 0xFE0F ],
+					[ 0x1F3F3, 0xFE0F, 0x200B, 0x26A7, 0xFE0F ]
+				);
+
+				if ( isIdentical ) {
+					return false;
+				}
+
+				/*
+				 * Test for UN flag compatibility. This is the least supported of the letter locale flags,
+				 * so gives us an easy test for full support.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly ([U] + [N]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 0xD83C, 0xDDFA, 0xD83C, 0xDDF3 ],
+					[ 0xD83C, 0xDDFA, 0x200B, 0xD83C, 0xDDF3 ]
+				);
+
+				if ( isIdentical ) {
+					return false;
+				}
+
+				/*
+				 * Test for English flag compatibility. England is a country in the United Kingdom, it
+				 * does not have a two letter locale code but rather an five letter sub-division code.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (black flag emoji + [G] + [B] + [E] + [N] + [G]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[ 0xD83C, 0xDFF4, 0xDB40, 0xDC67, 0xDB40, 0xDC62, 0xDB40, 0xDC65, 0xDB40, 0xDC6E, 0xDB40, 0xDC67, 0xDB40, 0xDC7F ],
+					[ 0xD83C, 0xDFF4, 0x200B, 0xDB40, 0xDC67, 0x200B, 0xDB40, 0xDC62, 0x200B, 0xDB40, 0xDC65, 0x200B, 0xDB40, 0xDC6E, 0x200B, 0xDB40, 0xDC67, 0x200B, 0xDB40, 0xDC7F ]
+				);
+
+				return ! isIdentical;
+			case 'emoji':
+				/*
+				 * Why can't we be friends? Everyone can now shake hands in emoji, regardless of skin tone!
+				 *
+				 * To test for Emoji 14.0 support, try to render a new emoji: Handshake: Light Skin Tone, Dark Skin Tone.
+				 *
+				 * The Handshake: Light Skin Tone, Dark Skin Tone emoji is a ZWJ sequence combining 🫱 Rightwards Hand,
+				 * 🏻 Light Skin Tone, a Zero Width Joiner, 🫲 Leftwards Hand, and 🏿 Dark Skin Tone.
+				 *
+				 * 0x1FAF1 == Rightwards Hand
+				 * 0x1F3FB == Light Skin Tone
+				 * 0x200D == Zero-Width Joiner (ZWJ) that links the code points for the new emoji or
+				 * 0x200B == Zero-Width Space (ZWS) that is rendered for clients not supporting the new emoji.
+				 * 0x1FAF2 == Leftwards Hand
+				 * 0x1F3FF == Dark Skin Tone.
+				 *
+				 * When updating this test for future Emoji releases, ensure that individual emoji that make up the
+				 * sequence come from older emoji standards.
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					[0x1FAF1, 0x1F3FB, 0x200D, 0x1FAF2, 0x1F3FF],
+					[0x1FAF1, 0x1F3FB, 0x200B, 0x1FAF2, 0x1F3FF]
+				);
+
+				return ! isIdentical;
+		}
+
+		return false;
+	}
+
+	/**
+	 * Adds a script to the head of the document.
+	 *
+	 * @ignore
+	 *
+	 * @since 4.2.0
+	 *
+	 * @param {Object} src The url where the script is located.
+	 * @return {void}
+	 */
+	function addScript( src ) {
+		var script = document.createElement( 'script' );
+
+		script.src = src;
+		script.defer = script.type = 'text/javascript';
+		document.getElementsByTagName( 'head' )[0].appendChild( script );
+	}
+
+	tests = Array( 'flag', 'emoji' );
+
+	settings.supports = {
+		everything: true,
+		everythingExceptFlag: true
+	};
+
+	/*
+	 * Tests the browser support for flag emojis and other emojis, and adjusts the
+	 * support settings accordingly.
+	 */
+	for( ii = 0; ii < tests.length; ii++ ) {
+		settings.supports[ tests[ ii ] ] = browserSupportsEmoji( tests[ ii ] );
+
+		settings.supports.everything = settings.supports.everything && settings.supports[ tests[ ii ] ];
+
+		if ( 'flag' !== tests[ ii ] ) {
+			settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && settings.supports[ tests[ ii ] ];
+		}
+	}
+
+	settings.supports.everythingExceptFlag = settings.supports.everythingExceptFlag && ! settings.supports.flag;
+
+	// Sets DOMReady to false and assigns a ready function to settings.
+	settings.DOMReady = false;
+	settings.readyCallback = function() {
+		settings.DOMReady = true;
+	};
+
+	// When the browser can not render everything we need to load a polyfill.
+	if ( ! settings.supports.everything ) {
+		ready = function() {
+			settings.readyCallback();
+		};
+
+		/*
+		 * Cross-browser version of adding a dom ready event.
+		 */
+		if ( document.addEventListener ) {
+			document.addEventListener( 'DOMContentLoaded', ready, false );
+			window.addEventListener( 'load', ready, false );
+		} else {
+			window.attachEvent( 'onload', ready );
+			document.attachEvent( 'onreadystatechange', function() {
+				if ( 'complete' === document.readyState ) {
+					settings.readyCallback();
+				}
+			} );
+		}
+
+		src = settings.source || {};
+
+		if ( src.concatemoji ) {
+			addScript( src.concatemoji );
+		} else if ( src.wpemoji && src.twemoji ) {
+			addScript( src.twemoji );
+			addScript( src.wpemoji );
+		}
+	}
+
+} )( window, document, window._wpemojiSettings );
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css' href='wp-includes/css/dist/block-library/style6a4d.css?ver=6.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='wp-includes/css/classic-themes68b3.css?ver=1' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='contact-form-7-css' href='wp-content/plugins/contact-form-7/includes/css/styles5406.css?ver=5.5.6' type='text/css' media='all' />
+<link rel='stylesheet' id='wpdm-font-awesome-css' href='wp-content/plugins/download-manager/assets/fontawesome/css/all6a4d.css?ver=6.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wpdm-front-bootstrap-css' href='wp-content/plugins/download-manager/assets/bootstrap/css/bootstrap.min6a4d.css?ver=6.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wpdm-front-css' href='wp-content/plugins/download-manager/assets/css/front6a4d.css?ver=6.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='newsup-fonts-css' href='http://fonts.googleapis.com/css?family=Montserrat%3A400%2C500%2C700%2C800%7CWork%2BSans%3A300%2C400%2C500%2C600%2C700%2C800%2C900%26display%3Dswap&amp;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css' href='wp-content/themes/newsup/css/bootstrap6a4d.css?ver=6.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='newsup-style-css' href='wp-content/themes/news-talk/style6a4d.css?ver=6.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-5-all-css' href='wp-content/themes/newsup/css/font-awesome/css/all.min6a4d.css?ver=6.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-4-shim-css' href='wp-content/themes/newsup/css/font-awesome/css/v4-shims.min6a4d.css?ver=6.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='owl-carousel-css' href='wp-content/themes/newsup/css/owl.carousel6a4d.css?ver=6.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='smartmenus-css' href='wp-content/themes/newsup/css/jquery.smartmenus.bootstrap6a4d.css?ver=6.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-css' href='wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons7816.css?ver=5.15.0' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css' href='wp-content/plugins/elementor/assets/css/frontend3ab2.css?ver=3.6.5' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-90-css' href='wp-content/uploads/elementor/css/post-901c0e.css?ver=1651736893' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-global-css' href='wp-content/uploads/elementor/css/global39f5.css?ver=1651797741' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-6-css' href='wp-content/uploads/elementor/css/post-6f3fc.css?ver=1728534595' type='text/css' media='all' />
+<link rel='stylesheet' id='addtoany-css' href='wp-content/plugins/add-to-any/addtoany.mind47c.css?ver=1.16' type='text/css' media='all' />
+<style id='addtoany-inline-css' type='text/css'>
+@media screen and (min-width:981px){
+.a2a_floating_style.a2a_default_style{display:none;}
+}
+</style>
+<link rel='stylesheet' id='tmm-css' href='wp-content/plugins/team-members/inc/css/tmm_style6a4d.css?ver=6.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='newsup-style-parent-css' href='wp-content/themes/newsup/style6a4d.css?ver=6.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='newstalk-style-css' href='wp-content/themes/news-talk/style5152.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='newstalk-default-css-css' href='wp-content/themes/news-talk/css/colors/default6a4d.css?ver=6.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='google-fonts-1-css' href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;display=auto&amp;ver=6.1.1' type='text/css' media='all' />
+<script type='text/javascript' id='addtoany-core-js-before'>
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};
+</script>
+<script type='text/javascript' async src='../static.addtoany.com/menu/page.js' id='addtoany-core-js'></script>
+<script type='text/javascript' src='wp-includes/js/jquery/jquerya7a0.js?ver=3.6.1' id='jquery-core-js'></script>
+<script type='text/javascript' src='wp-includes/js/jquery/jquery-migrated617.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' async src='wp-content/plugins/add-to-any/addtoany.min4963.js?ver=1.1' id='addtoany-jquery-js'></script>
+<script type='text/javascript' src='wp-content/plugins/download-manager/assets/bootstrap/js/popper.min6a4d.js?ver=6.1.1' id='wpdm-poper-js'></script>
+<script type='text/javascript' src='wp-content/plugins/download-manager/assets/bootstrap/js/bootstrap.min6a4d.js?ver=6.1.1' id='wpdm-front-bootstrap-js'></script>
+<script type='text/javascript' id='wpdm-frontjs-js-extra'>
+/* <![CDATA[ */
+var wpdm_url = {"home":"https:\/\/sman20batam.sch.id\/","site":"https:\/\/sman20batam.sch.id\/","ajax":"https:\/\/sman20batam.sch.id\/wp-admin\/admin-ajax.php"};
+var wpdm_js = {"spinner":"<i class=\"fas fa-sun fa-spin\"><\/i>"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/download-manager/assets/js/front4ab7.js?ver=3.2.41' id='wpdm-frontjs-js'></script>
+<script type='text/javascript' src='wp-content/themes/newsup/js/navigation6a4d.js?ver=6.1.1' id='newsup-navigation-js'></script>
+<script type='text/javascript' src='wp-content/themes/newsup/js/bootstrap6a4d.js?ver=6.1.1' id='bootstrap-js'></script>
+<script type='text/javascript' src='wp-content/themes/newsup/js/owl.carousel.min6a4d.js?ver=6.1.1' id='owl-carousel-min-js'></script>
+<script type='text/javascript' src='wp-content/themes/newsup/js/jquery.smartmenus6a4d.js?ver=6.1.1' id='smartmenus-js-js'></script>
+<script type='text/javascript' src='wp-content/themes/newsup/js/jquery.smartmenus.bootstrap6a4d.js?ver=6.1.1' id='bootstrap-smartmenus-js-js'></script>
+<script type='text/javascript' src='wp-content/themes/newsup/js/jquery.marquee6a4d.js?ver=6.1.1' id='newsup-marquee-js-js'></script>
+<script type='text/javascript' src='wp-content/themes/newsup/js/main6a4d.js?ver=6.1.1' id='newsup-main-js-js'></script>
+<link rel="https://api.w.org/" href="wp-json/index.html" /><link rel="alternate" type="application/json" href="wp-json/wp/v2/pages/6.json" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.1.1" />
+<link rel="canonical" href="index.html" />
+<link rel='shortlink' href='index.html' />
+<link rel="alternate" type="application/json+oembed" href="wp-json/oembed/1.0/embed98b7.json?url=https%3A%2F%2Fsman20batam.sch.id%2F" />
+<link rel="alternate" type="text/xml+oembed" href="wp-json/oembed/1.0/embed78a6?url=https%3A%2F%2Fsman20batam.sch.id%2F&amp;format=xml" />
+<meta name="generator" content="Site Kit by Google 1.73.0" /><meta name="tec-api-version" content="v1"><meta name="tec-api-origin" content="https://sman20batam.sch.id"><link rel="alternate" href="wp-json/tribe/events/v1/index.html" /><style type="text/css" id="custom-background-css">
+    .wrapper { background-color: dd8c11; }
+</style>
+    <style type="text/css">
+            body .site-title a,
+        body .site-description {
+            color: #e6ea00;
+        }
+
+        .site-branding-text .site-title a {
+                font-size: 28px;
+            }
+
+            @media only screen and (max-width: 640px) {
+                .site-branding-text .site-title a {
+                    font-size: 40px;
+
+                }
+            }
+
+            @media only screen and (max-width: 375px) {
+                .site-branding-text .site-title a {
+                    font-size: 32px;
+
+                }
+            }
+
+        </style>
+    <style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #dd8c11; }
+</style>
+	<link rel="icon" href="wp-content/uploads/2022/11/logosmkgg.png" sizes="32x32" />
+<link rel="icon" href="wp-content/uploads/2022/11/logosmkgg.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="wp-content/uploads/2022/11/logosmkgg.png" />
+<meta name="msapplication-TileImage" content="https://sman20batam.sch.id/wp-content/uploads/2022/11/logosmkgg.png" />
+<meta name="generator" content="WordPress Download Manager 3.2.41" />
+                <link href="https://fonts.googleapis.com/css?family=Rubik"
+              rel="stylesheet">
+        <style>
+            .w3eden .fetfont,
+            .w3eden .btn,
+            .w3eden .btn.wpdm-front h3.title,
+            .w3eden .wpdm-social-lock-box .IN-widget a span:last-child,
+            .w3eden #xfilelist .panel-heading,
+            .w3eden .wpdm-frontend-tabs a,
+            .w3eden .alert:before,
+            .w3eden .panel .panel-heading,
+            .w3eden .discount-msg,
+            .w3eden .panel.dashboard-panel h3,
+            .w3eden #wpdm-dashboard-sidebar .list-group-item,
+            .w3eden #package-description .wp-switch-editor,
+            .w3eden .w3eden.author-dashbboard .nav.nav-tabs li a,
+            .w3eden .wpdm_cart thead th,
+            .w3eden #csp .list-group-item,
+            .w3eden .modal-title {
+                font-family: Rubik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+            .w3eden #csp .list-group-item {
+                text-transform: unset;
+            }
+
+
+        </style>
+            <style>
+        /* WPDM Link Template Styles */        </style>
+                <style>
+
+            :root {
+                --color-primary: #4a8eff;
+                --color-primary-rgb: 74, 142, 255;
+                --color-primary-hover: #5998ff;
+                --color-primary-active: #3281ff;
+                --color-secondary: #6c757d;
+                --color-secondary-rgb: 108, 117, 125;
+                --color-secondary-hover: #6c757d;
+                --color-secondary-active: #6c757d;
+                --color-success: #018e11;
+                --color-success-rgb: 1, 142, 17;
+                --color-success-hover: #0aad01;
+                --color-success-active: #0c8c01;
+                --color-info: #2CA8FF;
+                --color-info-rgb: 44, 168, 255;
+                --color-info-hover: #2CA8FF;
+                --color-info-active: #2CA8FF;
+                --color-warning: #FFB236;
+                --color-warning-rgb: 255, 178, 54;
+                --color-warning-hover: #FFB236;
+                --color-warning-active: #FFB236;
+                --color-danger: #ff5062;
+                --color-danger-rgb: 255, 80, 98;
+                --color-danger-hover: #ff5062;
+                --color-danger-active: #ff5062;
+                --color-green: #30b570;
+                --color-blue: #0073ff;
+                --color-purple: #8557D3;
+                --color-red: #ff5062;
+                --color-muted: rgba(69, 89, 122, 0.6);
+                --wpdm-font: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            }
+
+            .wpdm-download-link.btn.btn-primary {
+                border-radius: 4px;
+            }
+
+
+        </style>
+        </head>
+<body class="home page-template-default page page-id-6 custom-background wp-custom-logo wp-embed-responsive tribe-no-js  ta-hide-date-author-in-list elementor-default elementor-kit-90 elementor-page elementor-page-6" >
+
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 0 0"
+		width="0"
+		height="0"
+		focusable="false"
+		role="none"
+		style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"
+	>
+		<defs>
+			<filter id="wp-duotone-dark-grayscale">
+				<feColorMatrix
+					color-interpolation-filters="sRGB"
+					type="matrix"
+					values="
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+					"
+				/>
+				<feComponentTransfer color-interpolation-filters="sRGB" >
+					<feFuncR type="table" tableValues="0 0.49803921568627" />
+					<feFuncG type="table" tableValues="0 0.49803921568627" />
+					<feFuncB type="table" tableValues="0 0.49803921568627" />
+					<feFuncA type="table" tableValues="1 1" />
+				</feComponentTransfer>
+				<feComposite in2="SourceGraphic" operator="in" />
+			</filter>
+		</defs>
+	</svg>
+
+	
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 0 0"
+		width="0"
+		height="0"
+		focusable="false"
+		role="none"
+		style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"
+	>
+		<defs>
+			<filter id="wp-duotone-grayscale">
+				<feColorMatrix
+					color-interpolation-filters="sRGB"
+					type="matrix"
+					values="
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+					"
+				/>
+				<feComponentTransfer color-interpolation-filters="sRGB" >
+					<feFuncR type="table" tableValues="0 1" />
+					<feFuncG type="table" tableValues="0 1" />
+					<feFuncB type="table" tableValues="0 1" />
+					<feFuncA type="table" tableValues="1 1" />
+				</feComponentTransfer>
+				<feComposite in2="SourceGraphic" operator="in" />
+			</filter>
+		</defs>
+	</svg>
+
+	
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 0 0"
+		width="0"
+		height="0"
+		focusable="false"
+		role="none"
+		style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"
+	>
+		<defs>
+			<filter id="wp-duotone-purple-yellow">
+				<feColorMatrix
+					color-interpolation-filters="sRGB"
+					type="matrix"
+					values="
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+					"
+				/>
+				<feComponentTransfer color-interpolation-filters="sRGB" >
+					<feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" />
+					<feFuncG type="table" tableValues="0 1" />
+					<feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" />
+					<feFuncA type="table" tableValues="1 1" />
+				</feComponentTransfer>
+				<feComposite in2="SourceGraphic" operator="in" />
+			</filter>
+		</defs>
+	</svg>
+
+	
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 0 0"
+		width="0"
+		height="0"
+		focusable="false"
+		role="none"
+		style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"
+	>
+		<defs>
+			<filter id="wp-duotone-blue-red">
+				<feColorMatrix
+					color-interpolation-filters="sRGB"
+					type="matrix"
+					values="
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+					"
+				/>
+				<feComponentTransfer color-interpolation-filters="sRGB" >
+					<feFuncR type="table" tableValues="0 1" />
+					<feFuncG type="table" tableValues="0 0.27843137254902" />
+					<feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" />
+					<feFuncA type="table" tableValues="1 1" />
+				</feComponentTransfer>
+				<feComposite in2="SourceGraphic" operator="in" />
+			</filter>
+		</defs>
+	</svg>
+
+	
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 0 0"
+		width="0"
+		height="0"
+		focusable="false"
+		role="none"
+		style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"
+	>
+		<defs>
+			<filter id="wp-duotone-midnight">
+				<feColorMatrix
+					color-interpolation-filters="sRGB"
+					type="matrix"
+					values="
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+					"
+				/>
+				<feComponentTransfer color-interpolation-filters="sRGB" >
+					<feFuncR type="table" tableValues="0 0" />
+					<feFuncG type="table" tableValues="0 0.64705882352941" />
+					<feFuncB type="table" tableValues="0 1" />
+					<feFuncA type="table" tableValues="1 1" />
+				</feComponentTransfer>
+				<feComposite in2="SourceGraphic" operator="in" />
+			</filter>
+		</defs>
+	</svg>
+
+	
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 0 0"
+		width="0"
+		height="0"
+		focusable="false"
+		role="none"
+		style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"
+	>
+		<defs>
+			<filter id="wp-duotone-magenta-yellow">
+				<feColorMatrix
+					color-interpolation-filters="sRGB"
+					type="matrix"
+					values="
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+					"
+				/>
+				<feComponentTransfer color-interpolation-filters="sRGB" >
+					<feFuncR type="table" tableValues="0.78039215686275 1" />
+					<feFuncG type="table" tableValues="0 0.94901960784314" />
+					<feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" />
+					<feFuncA type="table" tableValues="1 1" />
+				</feComponentTransfer>
+				<feComposite in2="SourceGraphic" operator="in" />
+			</filter>
+		</defs>
+	</svg>
+
+	
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 0 0"
+		width="0"
+		height="0"
+		focusable="false"
+		role="none"
+		style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"
+	>
+		<defs>
+			<filter id="wp-duotone-purple-green">
+				<feColorMatrix
+					color-interpolation-filters="sRGB"
+					type="matrix"
+					values="
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+					"
+				/>
+				<feComponentTransfer color-interpolation-filters="sRGB" >
+					<feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" />
+					<feFuncG type="table" tableValues="0 1" />
+					<feFuncB type="table" tableValues="0.44705882352941 0.4" />
+					<feFuncA type="table" tableValues="1 1" />
+				</feComponentTransfer>
+				<feComposite in2="SourceGraphic" operator="in" />
+			</filter>
+		</defs>
+	</svg>
+
+	
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 0 0"
+		width="0"
+		height="0"
+		focusable="false"
+		role="none"
+		style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"
+	>
+		<defs>
+			<filter id="wp-duotone-blue-orange">
+				<feColorMatrix
+					color-interpolation-filters="sRGB"
+					type="matrix"
+					values="
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+						.299 .587 .114 0 0
+					"
+				/>
+				<feComponentTransfer color-interpolation-filters="sRGB" >
+					<feFuncR type="table" tableValues="0.098039215686275 1" />
+					<feFuncG type="table" tableValues="0 0.66274509803922" />
+					<feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" />
+					<feFuncA type="table" tableValues="1 1" />
+				</feComponentTransfer>
+				<feComposite in2="SourceGraphic" operator="in" />
+			</filter>
+		</defs>
+	</svg>
+
+	<div id="page" class="site">
+<a class="skip-link screen-reader-text" href="#content">
+Skip to content</a>
+    <div class="wrapper" id="custom-background-css">
+        <header class="mg-headwidget">
+            <!--==================== TOP BAR ====================-->
+
+            <div class="mg-head-detail hidden-xs">
+    <div class="container-fluid">
+        <div class="row">
+                        <div class="col-md-6 col-xs-12">
+                <ul class="info-left">
+                            <li>Mon. Feb 17th, 2025             <span  id="time" class="time"></span>
+                    </li>
+                    </ul>
+
+                           </div>
+
+
+                        <div class="col-md-6 col-xs-12">
+                <ul class="mg-social info-right">
+                    
+                                            <a  target="_blank" href="https://www.smknurulanwar.sch.id">
+                      <li><span class="icon-soci facebook"><i class="fab fa-facebook"></i></span> </li></a>
+                                                                                                              <a target="_blank"  href="https://www.www.smknurulanwar.sch.id">
+                      <li><span class="icon-soci instagram"><i class="fab fa-instagram"></i></span></li></a>
+                                                                  <a target="_blank"  href="https://www.www.smknurulanwar.sch.id">
+                      <li><span class="icon-soci youtube"><i class="fab fa-youtube"></i></span></li></a>
+                                              
+                                      </ul>
+            </div>
+                    </div>
+    </div>
+</div>
+            <div class="clearfix"></div>
+                        <div class="mg-nav-widget-area-back" style='background-image: url("wp-content/uploads/2023/12/smknurulanwar.jpg" );'>
+                        <div class="overlay">
+              <div class="inner"  style="background-color:rgba(104,0,41,0.4);" > 
+                <div class="container-fluid">
+                    <div class="mg-nav-widget-area">
+                        <div class="row align-items-center">
+                            <div class="col-md-3 col-sm-4 text-center-xs">
+                                <div class="navbar-header">
+                                <span class="navbar-brand"><img width="174" height="207" src="wp-content/uploads/2022/11/logosmkgg.png" class="custom-logo" alt="" decoding="async" /></span>                                <div class="site-branding-text">
+                                <h1 class="site-title"> <a href="index.html" rel="home">SMK NURUL ANWAR - C.E.R.D.A.S. Berkarakter</a></h1>
+                                <p class="site-description">(C)akap. (E)tika. (R)eligius. (D)igital. (A)sri. (S)istematis.</p>
+                                </div>
+                                                              </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+              </div>
+              </div>
+          </div>
+    <div class="mg-menu-full">
+      <nav class="navbar navbar-expand-lg navbar-wp">
+        <div class="container-fluid flex-row">
+          
+                <!-- Right nav -->
+                    <div class="m-header pl-3 ml-auto my-2 my-lg-0 position-relative align-items-center">
+                                                <a class="mobilehomebtn" href="index.html"><span class="fas fa-home"></span></a>
+                        
+                        <div class="dropdown ml-auto show mg-search-box pr-3">
+                            <a class="dropdown-toggle msearch ml-auto" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               <i class="fas fa-search"></i>
+                            </a>
+
+                            <div class="dropdown-menu searchinner" aria-labelledby="dropdownMenuLink">
+                        <form role="search" method="get" id="searchform" action="https://sman20batam.sch.id/">
+  <div class="input-group">
+    <input type="search" class="form-control" placeholder="Search" value="" name="s" />
+    <span class="input-group-btn btn-default">
+    <button type="submit" class="btn"> <i class="fas fa-search"></i> </button>
+    </span> </div>
+</form>                      </div>
+                        </div>
+                        <!-- navbar-toggle -->
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wp" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <i class="fas fa-bars"></i>
+                        </button>
+                        <!-- /navbar-toggle -->
+                    </div>
+                    <!-- /Right nav --> 
+          
+                  <div class="collapse navbar-collapse" id="navbar-wp">
+                    <div class="d-md-block">
+                  <ul id="menu-primary-menu" class="nav navbar-nav mr-auto"><li class="active home"><a class="homebtn" href="index.html"><span class='fas fa-home'></span></a></li><li id="menu-item-1726" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1726 dropdown"><a class="nav-link" title="Tentang" href="#" data-toggle="dropdown" class="dropdown-toggle">Tentang </a>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-1730" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1730"><a class="dropdown-item" title="Kepala Sekolah" href="kepala-sekolah/index.html">Kepala Sekolah</a></li>
+	<li id="menu-item-1733" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1733"><a class="dropdown-item" title="Profil" href="profil/index.html">Profil</a></li>
+	<li id="menu-item-1732" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1732"><a class="dropdown-item" title="Sejarah" href="sejarah/index.html">Sejarah</a></li>
+	<li id="menu-item-1731" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1731"><a class="dropdown-item" title="Visi, Misi dan Tujuan" href="visi-dan-misi/index.html">Visi, Misi dan Tujuan</a></li>
+	<li id="menu-item-1729" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1729"><a class="dropdown-item" title="Struktur Organisasi Sekolah" href="struktur-organisasi-sekolah/index.html">Struktur Organisasi Sekolah</a></li>
+	<li id="menu-item-1747" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1747"><a class="dropdown-item" title="DUK" target="_blank" href="https://sites.google.com/admin.sma.belajar.id/duksman20batam2022/home">DUK</a></li>
+</ul>
+</li>
+<li id="menu-item-1745" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1745 dropdown"><a class="nav-link" title="Administrasi" href="#" data-toggle="dropdown" class="dropdown-toggle">Administrasi </a>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-1746" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1746"><a class="dropdown-item" title="Layanan Mandiri" href="layanan-mandiri/index.html">Layanan Mandiri</a></li>
+	<li id="menu-item-1766" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1766"><a class="dropdown-item" title="Tata Usaha" target="_blank" href="https://sites.google.com/admin.sma.belajar.id/tatausahasman20batam/home">Tata Usaha</a></li>
+</ul>
+</li>
+<li id="menu-item-1764" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1764"><a class="nav-link" title="Komite" target="_blank" href="https://sites.google.com/admin.sma.belajar.id/komitesman20batam/beranda">Komite</a></li>
+<li id="menu-item-1768" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1768 dropdown"><a class="nav-link" title="Pembelajaran" href="#" data-toggle="dropdown" class="dropdown-toggle">Pembelajaran </a>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-1769" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1769 dropdown"><a class="dropdown-item" title="Blog" href="#">Blog</a>
+	<ul role="menu" class=" dropdown-menu">
+		<li id="menu-item-1770" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1770"><a class="dropdown-item" title="Kepala Sekolah - Adi Saputra, M.Pd" target="_blank" href="http://www.oasepembelajaran.com/">Kepala Sekolah &#8211; Adi Saputra, M.Pd</a></li>
+		<li id="menu-item-1773" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1773 dropdown"><a class="dropdown-item" title="PA ISLAM" href="#">PA ISLAM</a>
+		<ul role="menu" class=" dropdown-menu">
+			<li id="menu-item-1774" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1774"><a class="dropdown-item" title="Kamaruddin Alwan, S.Ag" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/komar-pai/halaman-muka">Kamaruddin Alwan, S.Ag</a></li>
+			<li id="menu-item-1775" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1775"><a class="dropdown-item" title="Rip&#039;ah, S.Pd.I" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/bahan-ajar-pai/halaman-muka">Rip&#8217;ah, S.Pd.I</a></li>
+			<li id="menu-item-2768" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2768"><a class="dropdown-item" title="MHD. Hudawi" target="_blank" href="https://sites.google.com/guru.smk.belajar.id/mhdhudawi/home">MHD. Hudawi</a></li>
+		</ul>
+</li>
+		<li id="menu-item-2725" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2725 dropdown"><a class="dropdown-item" title="PA KRISTEN" href="#">PA KRISTEN</a>
+		<ul role="menu" class=" dropdown-menu">
+			<li id="menu-item-1807" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1807"><a class="dropdown-item" title="Menara Simbolon, M.Th" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/pak-memerdekakan/home">Menara Simbolon, M.Th</a></li>
+			<li id="menu-item-1809" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1809"><a class="dropdown-item" title="Rein Lenon Manullang, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/pak-dengan-suka-cita/home">Rein Lenon Manullang, S.Pd</a></li>
+		</ul>
+</li>
+		<li id="menu-item-1824" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1824"><a class="dropdown-item" title="PA KATOLIK" target="_blank" href="#">PA KATOLIK</a></li>
+		<li id="menu-item-1811" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1811 dropdown"><a class="dropdown-item" title="PKN" target="_blank" href="#">PKN</a>
+		<ul role="menu" class=" dropdown-menu">
+			<li id="menu-item-1818" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1818"><a class="dropdown-item" title="Yusan Ariandini, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/faseependidikanpancasila/home">Yusan Ariandini, S.Pd</a></li>
+			<li id="menu-item-1820" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1820"><a class="dropdown-item" title="Ridwan, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/ridwan/halaman-muka">Ridwan, S.Pd</a></li>
+		</ul>
+</li>
+		<li id="menu-item-2157" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2157 dropdown"><a class="dropdown-item" title="BAHASA INDONESIA" href="#">BAHASA INDONESIA</a>
+		<ul role="menu" class=" dropdown-menu">
+			<li id="menu-item-1822" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1822"><a class="dropdown-item" title="Yeni Afdal, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/bahasaindonesiafasee/halaman-muka">Yeni Afdal, S.Pd</a></li>
+			<li id="menu-item-1823" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1823"><a class="dropdown-item" title="Jusmawati, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/jusmawati-bahasa-indonesia?usp=sharing">Jusmawati, S.Pd</a></li>
+			<li id="menu-item-1831" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1831"><a class="dropdown-item" title="Evi Fitriana, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/evi512/home">Evi Fitriana, S.Pd</a></li>
+			<li id="menu-item-3223" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3223"><a class="dropdown-item" title="Linia Devi, S.Pd" href="https://sites.google.com/guru.sma.belajar.id/linia-devi/home">Linia Devi, S.Pd</a></li>
+		</ul>
+</li>
+		<li id="menu-item-2084" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2084 dropdown"><a class="dropdown-item" title="BAHASA INGGRIS" href="#">BAHASA INGGRIS</a>
+		<ul role="menu" class=" dropdown-menu">
+			<li id="menu-item-2158" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2158"><a class="dropdown-item" title="Putri Murni Dermawani N., S.S" target="_blank">Putri Murni Dermawani N., S.S</a></li>
+			<li id="menu-item-2160" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2160"><a class="dropdown-item" title="Nurul Fasikhah, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/ppt-narrative-text/home">Nurul Fasikhah, S.Pd</a></li>
+			<li id="menu-item-2159" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2159"><a class="dropdown-item" title="Sarah, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/sarah-s-pd">Sarah, S.Pd</a></li>
+			<li id="menu-item-2144" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2144"><a class="dropdown-item" title="Ulfa Ariske, S.Pd" target="_blank">Ulfa Ariske, S.Pd</a></li>
+			<li id="menu-item-1825" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1825"><a class="dropdown-item" title="Erni Binti Husin, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/erni-binti-husin/home">Erni Binti Husin, S.Pd</a></li>
+		</ul>
+</li>
+		<li id="menu-item-2138" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2138 dropdown"><a class="dropdown-item" title="MATEMATIKA" href="#">MATEMATIKA</a>
+		<ul role="menu" class=" dropdown-menu">
+			<li id="menu-item-2142" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2142"><a class="dropdown-item" title="Nuraisyah Lubis, S.Si" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/mathai/beranda">Nuraisyah Lubis, S.Si</a></li>
+			<li id="menu-item-2726" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2726"><a class="dropdown-item" title="Drs. Lahaseng" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/blogatoe68/atoelah">Drs. Lahaseng</a></li>
+			<li id="menu-item-2727" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2727"><a class="dropdown-item" title="Ayu Rachma Fahmi, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/ayurachmafahmi/beranda">Ayu Rachma Fahmi, S.Pd</a></li>
+			<li id="menu-item-2728" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2728"><a class="dropdown-item" title="Indah Amelia, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/mtkwajib-indahamelia/halaman-muka">Indah Amelia, S.Pd</a></li>
+			<li id="menu-item-2729" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2729"><a class="dropdown-item" title="Masvin Gultom, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/masvingultom92/home">Masvin Gultom, S.Pd</a></li>
+			<li id="menu-item-3225" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3225"><a class="dropdown-item" title="Riri Ratna Anggraini, S.Pd" href="https://sites.google.com/guru.sma.belajar.id/ririblog/halaman-muka">Riri Ratna Anggraini, S.Pd</a></li>
+		</ul>
+</li>
+		<li id="menu-item-2730" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2730 dropdown"><a class="dropdown-item" title="PJOK" href="http://-/">PJOK</a>
+		<ul role="menu" class=" dropdown-menu">
+			<li id="menu-item-2731" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2731"><a class="dropdown-item" title="Gunawan Masprianto, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/pjokfasee/halaman-muka">Gunawan Masprianto, S.Pd</a></li>
+			<li id="menu-item-2732" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2732"><a class="dropdown-item" title="Dodoi Indra Saputra, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/dodoiindrasaputra/home">Dodoi Indra Saputra, S.Pd</a></li>
+			<li id="menu-item-2733" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2733"><a class="dropdown-item" title="Aminullah, S.Pd" target="_blank" href="http://-/">Aminullah, S.Pd</a></li>
+			<li id="menu-item-2734" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2734"><a class="dropdown-item" title="Zalmawati, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/zalmawati/home">Zalmawati, S.Pd</a></li>
+		</ul>
+</li>
+		<li id="menu-item-2735" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2735 dropdown"><a class="dropdown-item" title="PRAKARYA" href="#">PRAKARYA</a>
+		<ul role="menu" class=" dropdown-menu">
+			<li id="menu-item-2736" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2736"><a class="dropdown-item" title="Yang Karmila, S.Pd.Ek" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/berkarya-itu-indah/halaman-muka">Yang Karmila, S.Pd.Ek</a></li>
+			<li id="menu-item-2143" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2143"><a class="dropdown-item" title="Rolis Dwi Pratiwi, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/ekonomitiwi?usp=sharing">Rolis Dwi Pratiwi, S.Pd</a></li>
+			<li id="menu-item-3226" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3226"><a class="dropdown-item" title="Ridwan Juli Fitrianto, S.Pd" href="https://coretanrjf.blogspot.com/">Ridwan Juli Fitrianto, S.Pd</a></li>
+		</ul>
+</li>
+		<li id="menu-item-2737" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2737 dropdown"><a class="dropdown-item" title="SENI BUDAYA" href="#">SENI BUDAYA</a>
+		<ul role="menu" class=" dropdown-menu">
+			<li id="menu-item-2738" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2738"><a class="dropdown-item" title="Wisrayanti ,S.Pd" target="_blank" href="http://-/">Wisrayanti ,S.Pd</a></li>
+			<li id="menu-item-2141" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2141"><a class="dropdown-item" title="Mardesten Hendri, S. Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/seni-budaya-sma-xii-batam/home">Mardesten Hendri, S. Pd</a></li>
+			<li id="menu-item-2608" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2608"><a class="dropdown-item" title="Zaina Riansyah, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/zaina-riansyah---seni-budaya/beranda">Zaina Riansyah, S.Pd</a></li>
+		</ul>
+</li>
+		<li id="menu-item-2776" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2776 dropdown"><a class="dropdown-item" title="KIMIA" href="#">KIMIA</a>
+		<ul role="menu" class=" dropdown-menu">
+			<li id="menu-item-2742" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2742 dropdown"><a class="dropdown-item" title="Siska Handayani, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/siskakimiablog/home">Siska Handayani, S.Pd</a>
+			<ul role="menu" class=" dropdown-menu">
+				<li id="menu-item-2827" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2827"><a class="dropdown-item" title="PENELITIAN ILMIAH" href="penelitian-ilmiah/index.html">PENELITIAN ILMIAH</a></li>
+			</ul>
+</li>
+			<li id="menu-item-2743" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2743"><a class="dropdown-item" title="Tri Saryanto, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/chemistri/home">Tri Saryanto, S.Pd</a></li>
+			<li id="menu-item-2744" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2744"><a class="dropdown-item" title="Eva Ana Winta Buangmanalu, S.Pd" target="_blank" href="https://sites.google.com/guru.smk.belajar.id/evaanabuangmanalu/beranda">Eva Ana Winta Buangmanalu, S.Pd</a></li>
+		</ul>
+</li>
+		<li id="menu-item-2739" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2739 dropdown"><a class="dropdown-item" title="BIOLOGI" href="#">BIOLOGI</a>
+		<ul role="menu" class=" dropdown-menu">
+			<li id="menu-item-2740" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2740"><a class="dropdown-item" title="Siti Maimunah, S.Pt" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/biologiyess/halaman-muka">Siti Maimunah, S.Pt</a></li>
+			<li id="menu-item-2145" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2145"><a class="dropdown-item" title="Soni Muzaki, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/biosoni/beranda">Soni Muzaki, S.Pd</a></li>
+			<li id="menu-item-3227" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3227"><a class="dropdown-item" title="Tut Angraini, S.Pd" href="#">Tut Angraini, S.Pd</a></li>
+		</ul>
+</li>
+		<li id="menu-item-2741" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2741 dropdown"><a class="dropdown-item" title="FISIKA" href="#">FISIKA</a>
+		<ul role="menu" class=" dropdown-menu">
+			<li id="menu-item-2155" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2155"><a class="dropdown-item" title="Bau Ismatul Auliyah A., S.Pd" target="_blank" href="https://sites.google.com/view/fisikafaseedanf?usp=sharing">Bau Ismatul Auliyah A., S.Pd</a></li>
+			<li id="menu-item-2777" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2777"><a class="dropdown-item" title="Rita Wahyuni, S.Pd" target="_blank" href="http://-/">Rita Wahyuni, S.Pd</a></li>
+			<li id="menu-item-3228" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3228"><a class="dropdown-item" title="Tomy Al Irsyat, S.Pd" href="#">Tomy Al Irsyat, S.Pd</a></li>
+		</ul>
+</li>
+		<li id="menu-item-2770" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2770 dropdown"><a class="dropdown-item" title="SEJARAH" href="#">SEJARAH</a>
+		<ul role="menu" class=" dropdown-menu">
+			<li id="menu-item-2769" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2769"><a class="dropdown-item" title="Diana, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/diana751/halaman-muka">Diana, S.Pd</a></li>
+			<li id="menu-item-2772" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2772"><a class="dropdown-item" title="Maria Stefani Wahyu, S.Pd" target="_blank" href="https://sites.google.com/view/history-by-stefani/home">Maria Stefani Wahyu, S.Pd</a></li>
+			<li id="menu-item-2771" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2771"><a class="dropdown-item" title="Dita Puspa Fitriani, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/fase-e-sejarah/home">Dita Puspa Fitriani, S.Pd</a></li>
+		</ul>
+</li>
+		<li id="menu-item-2745" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2745 dropdown"><a class="dropdown-item" title="EKONOMI" href="#">EKONOMI</a>
+		<ul role="menu" class=" dropdown-menu">
+			<li id="menu-item-2746" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2746"><a class="dropdown-item" title="Dra. Sutini" target="_blank" href="http://-/">Dra. Sutini</a></li>
+			<li id="menu-item-2747" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2747"><a class="dropdown-item" title="Sondang Elsari Sitorus, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/ekonomitiwi?usp=sharing">Sondang Elsari Sitorus, S.Pd</a></li>
+			<li id="menu-item-2767" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2767"><a class="dropdown-item" title="Rolis Dwi Pertiwi, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/ekonomitiwi/beranda">Rolis Dwi Pertiwi, S.Pd</a></li>
+			<li id="menu-item-2748" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2748"><a class="dropdown-item" title="Yussi Lisa, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/ekonomi-education/home">Yussi Lisa, S.Pd</a></li>
+		</ul>
+</li>
+		<li id="menu-item-2749" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2749 dropdown"><a class="dropdown-item" title="GEOGRAFI" href="#">GEOGRAFI</a>
+		<ul role="menu" class=" dropdown-menu">
+			<li id="menu-item-2153" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2153"><a class="dropdown-item" title="Rini Setyowati, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/rinisetyowati/beranda">Rini Setyowati, S.Pd</a></li>
+			<li id="menu-item-2750" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2750"><a class="dropdown-item" title="Jendri Afriwal Gusti, S.Pd., M.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/atmosphere-geografi/home">Jendri Afriwal Gusti, S.Pd., M.Pd</a></li>
+			<li id="menu-item-2751" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2751"><a class="dropdown-item" title="Yola Selvia, S.Pd" target="_blank" href="http://-/">Yola Selvia, S.Pd</a></li>
+		</ul>
+</li>
+		<li id="menu-item-2753" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2753 dropdown"><a class="dropdown-item" title="SOSIOLOGI" href="#">SOSIOLOGI</a>
+		<ul role="menu" class=" dropdown-menu">
+			<li id="menu-item-2755" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2755"><a class="dropdown-item" title="Asdodianto, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/sosiologi-asik/home">Asdodianto, S.Pd</a></li>
+			<li id="menu-item-2151" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2151"><a class="dropdown-item" title="Rivo Yandiko, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/sosiologi-peka-lingkungan/beranda">Rivo Yandiko, S.Pd</a></li>
+			<li id="menu-item-2757" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2757"><a class="dropdown-item" title="Yuliaus, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/yuliyu/home">Yuliaus, S.Pd</a></li>
+		</ul>
+</li>
+		<li id="menu-item-2758" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2758 dropdown"><a class="dropdown-item" title="BIMBINGAN KONSELING" href="#">BIMBINGAN KONSELING</a>
+		<ul role="menu" class=" dropdown-menu">
+			<li id="menu-item-2759" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2759"><a class="dropdown-item" title="Rike Ernawati Sinaga, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/blog-bk-sahabat-siswa/halaman-muka">Rike Ernawati Sinaga, S.Pd</a></li>
+			<li id="menu-item-2760" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2760"><a class="dropdown-item" title="Monica Hittra Sihombing, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/materibk/selamat-datang">Monica Hittra Sihombing, S.Pd</a></li>
+			<li id="menu-item-2761" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2761"><a class="dropdown-item" title="Nurmalida, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/nurmalida/home">Nurmalida, S.Pd</a></li>
+			<li id="menu-item-2762" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2762"><a class="dropdown-item" title="Mentari Fanesyah, S.Pd" target="_blank" href="https://sites.google.com/view/mentari-fanesya/kata-bijaksana">Mentari Fanesyah, S.Pd</a></li>
+			<li id="menu-item-2763" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2763"><a class="dropdown-item" title="Ade Noviana, S.Pd" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/ade-noviana-s-pd/home">Ade Noviana, S.Pd</a></li>
+			<li id="menu-item-3229" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3229"><a class="dropdown-item" title="M. Bashar, S.Psi" href="#">M. Bashar, S.Psi</a></li>
+		</ul>
+</li>
+		<li id="menu-item-2764" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2764 dropdown"><a class="dropdown-item" title="TIK/INFORMATIKA" href="#">TIK/INFORMATIKA</a>
+		<ul role="menu" class=" dropdown-menu">
+			<li id="menu-item-2766" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2766"><a class="dropdown-item" title="Herman Sawiran, S.Kom" target="_blank" href="https://sites.google.com/view/parkinson-teknologi/home">Herman Sawiran, S.Kom</a></li>
+			<li id="menu-item-3230" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3230"><a class="dropdown-item" title="Ridwan Juli Fitrianto, S.Pd" href="https://coretanrjf.blogspot.com/">Ridwan Juli Fitrianto, S.Pd</a></li>
+			<li id="menu-item-3231" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3231"><a class="dropdown-item" title="Filza Juliansyah, S.Kom" href="https://sites.google.com/guru.sma.belajar.id/filzajuliansyahskom?usp=sharing">Filza Juliansyah, S.Kom</a></li>
+		</ul>
+</li>
+	</ul>
+</li>
+	<li id="menu-item-1772" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1772"><a class="dropdown-item" title="Komunitas Belajar" target="_blank" href="https://sites.google.com/admin.sma.belajar.id/diferensiasismandupul/beranda">Komunitas Belajar</a></li>
+	<li id="menu-item-1787" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1787"><a class="dropdown-item" title="Perpustakaan Digital" target="_blank" href="https://sites.google.com/view/perpustakaan-digital-sman-20-b/home">Perpustakaan Digital</a></li>
+	<li id="menu-item-1786" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1786"><a class="dropdown-item" title="Laboratorium IPA" target="_blank" href="https://sites.google.com/admin.sma.belajar.id/laboratorium-ipa-sman-20-batam/home">Laboratorium IPA</a></li>
+	<li id="menu-item-1777" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1777"><a class="dropdown-item" title="Literasi &amp; Numerasi" target="_blank" href="https://sites.google.com/admin.sma.belajar.id/literasinumerasisman20batam/halaman-muka">Literasi &#038; Numerasi</a></li>
+	<li id="menu-item-1778" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1778"><a class="dropdown-item" title="Penguatan Karakter" target="_blank" href="https://sites.google.com/admin.sma.belajar.id/penguatankaraktersman20batam/halaman-muka">Penguatan Karakter</a></li>
+	<li id="menu-item-1779" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1779"><a class="dropdown-item" title="Teknologi Informasi" target="_blank" href="https://sites.google.com/admin.sma.belajar.id/teknologi-informasi-sman-20-ba/halaman-muka">Teknologi Informasi</a></li>
+</ul>
+</li>
+<li id="menu-item-1781" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1781 dropdown"><a class="nav-link" title="Bidang" href="#" data-toggle="dropdown" class="dropdown-toggle">Bidang </a>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-1782" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1782 dropdown"><a class="dropdown-item" title="Kurikulum" target="_blank" href="#">Kurikulum</a>
+	<ul role="menu" class=" dropdown-menu">
+		<li id="menu-item-2477" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2477"><a class="dropdown-item" title="Pemilihan Mapel Fase F" target="_blank" href="https://sites.google.com/admin.sma.belajar.id/mapelpilihan24-25/program/mapel-pilihan-fase-f-tp-2023-2024">Pemilihan Mapel Fase F</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1783" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1783 dropdown"><a class="dropdown-item" title="Kesiswaan" target="_blank" href="https://sites.google.com/guru.sma.belajar.id/bidangkesiswaansman20batam/home">Kesiswaan</a>
+	<ul role="menu" class=" dropdown-menu">
+		<li id="menu-item-2468" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2468"><a class="dropdown-item" title="SANKSI PESERTA DIDIK TERLAMBAT" target="_blank" href="https://forms.gle/bZXjTshU7KNp3aFS8">SANKSI PESERTA DIDIK TERLAMBAT</a></li>
+		<li id="menu-item-2472" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2472"><a class="dropdown-item" title="KUMPULAN TUGAS SANKSI PESERTA DIDIK TERLAMBAT" target="_blank" href="https://docs.google.com/spreadsheets/d/1BqqpIgN8LgHVkt0B3K44-cS1rFgGvAnBwkWEJXa9UL0/edit?usp=sharing">KUMPULAN TUGAS SANKSI PESERTA DIDIK TERLAMBAT</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1784" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1784"><a class="dropdown-item" title="Sarana" target="_blank" href="https://sites.google.com/admin.sma.belajar.id/bidang-sarpras-sman-20-batam/home">Sarana</a></li>
+	<li id="menu-item-1785" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1785"><a class="dropdown-item" title="Humas" target="_blank" href="https://sites.google.com/admin.sma.belajar.id/bidang-humas-sman-20-batam/home">Humas</a></li>
+</ul>
+</li>
+<li id="menu-item-1789" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1789 dropdown"><a class="nav-link" title="Siswa" href="#" data-toggle="dropdown" class="dropdown-toggle">Siswa </a>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-1790" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1790"><a class="dropdown-item" title="20 News" target="_blank" href="https://sites.google.com/sma.belajar.id/sman20news/home">20 News</a></li>
+	<li id="menu-item-2029" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2029"><a class="dropdown-item" title="Rubrik Penilaian Portofolio Digital" target="_blank" href="https://drive.google.com/file/d/1B_bfXeAuh8XVgvcsnskCwJ9KB8UXUCM2/view?usp=sharing">Rubrik Penilaian Portofolio Digital</a></li>
+	<li id="menu-item-3156" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3156"><a class="dropdown-item" title="LINK UPLOAD PORTO DIGITAL FASE E" href="https://lynk.id/f-j/page/fase-e">LINK UPLOAD PORTO DIGITAL FASE E</a></li>
+	<li id="menu-item-3157" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3157"><a class="dropdown-item" title="LINK UPLOAD PORTO DIGITAL FASE F" href="https://lynk.id/f-j/page/fase-f">LINK UPLOAD PORTO DIGITAL FASE F</a></li>
+	<li id="menu-item-3100" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3100 dropdown"><a class="dropdown-item" title="FASE E" href="#">FASE E</a>
+	<ul role="menu" class=" dropdown-menu">
+		<li id="menu-item-3101" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3101"><a class="dropdown-item" title="1. ADIKARI" target="_blank" href="https://docs.google.com/spreadsheets/d/1Y0DK_vMqAYN3JrBn896QY1fISxkYsUgSZWQ4okFMDOY/edit?usp=sharing">1. ADIKARI</a></li>
+		<li id="menu-item-3102" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3102"><a class="dropdown-item" title="2. BAYANAKA" target="_blank" href="https://docs.google.com/spreadsheets/d/14qpma8DYjEj2kq8OVHkEO8_it9gMFa3xJBkgLbNQrZc/edit?usp=sharing">2. BAYANAKA</a></li>
+		<li id="menu-item-3103" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3103"><a class="dropdown-item" title="3. CYAVANA" target="_blank" href="https://docs.google.com/spreadsheets/d/1y4I1zNcMY_mbcO0yRAEE-Z-2w83U5XavK4SDjrV8nnA/edit?usp=sharing">3. CYAVANA</a></li>
+		<li id="menu-item-3104" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3104"><a class="dropdown-item" title="4. DARFA" target="_blank" href="https://docs.google.com/spreadsheets/d/1C5YACbRoO1yslkJy02Y0GKU-NlTFfRRlhZLZD7Nwe-8/edit?usp=sharing">4. DARFA</a></li>
+		<li id="menu-item-3106" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3106"><a class="dropdown-item" title="5. GAURAV" target="_blank" href="https://docs.google.com/spreadsheets/d/1jmBaZvrOmb6_nR1YY-HlwFVc25h4BgVzAdU5G4LU9E4/edit?usp=sharing">5. GAURAV</a></li>
+		<li id="menu-item-3107" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3107"><a class="dropdown-item" title="6. JANARDHANA" target="_blank" href="https://docs.google.com/spreadsheets/d/1sNheuKfT0tNsonz_NDSrGbjIKbdVe6EVr44VUgndMBU/edit?usp=sharing">6. JANARDHANA</a></li>
+		<li id="menu-item-3108" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3108"><a class="dropdown-item" title="7. MAHATMA" target="_blank" href="https://docs.google.com/spreadsheets/d/1bmy5iocD1c4BlTiFHUumySCVrhyqx2K-oMZ6BxWdJXs/edit?usp=sharing">7. MAHATMA</a></li>
+		<li id="menu-item-3110" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3110"><a class="dropdown-item" title="8. PRAMUDYA" target="_blank" href="https://docs.google.com/spreadsheets/d/1VvSlRWJOgUSTWXkxjJCIVZynx98zEWdWLr068431cus/edit?usp=sharing">8. PRAMUDYA</a></li>
+		<li id="menu-item-3109" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3109"><a class="dropdown-item" title="9. PRAMANA" target="_blank" href="https://docs.google.com/spreadsheets/d/1uq_Zx86qWaO_dU7WH-zrZCAWrzF0BwDuGXfE47Wi85E/edit?usp=sharing">9. PRAMANA</a></li>
+		<li id="menu-item-3111" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3111"><a class="dropdown-item" title="10. SAJEEVA" target="_blank" href="https://docs.google.com/spreadsheets/d/1kzJjPUtENWW6yhFGiWlLGG1pZ7uHhVxBODfh66PIIuU/edit?usp=sharing">10. SAJEEVA</a></li>
+		<li id="menu-item-3112" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3112"><a class="dropdown-item" title="11. VAREN" target="_blank" href="https://docs.google.com/spreadsheets/d/1GGxmOCbhQDA9lPPVzUHCjoLOr6B99S1dJgKa15LNPiU/edit?usp=sharing">11. VAREN</a></li>
+		<li id="menu-item-3113" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3113"><a class="dropdown-item" title="12. VIRENDRA" target="_blank" href="https://docs.google.com/spreadsheets/d/1jF_XYeg5y7HNQNuxvEWlIhRubABdvUX7N1x0aN3vA3I/edit?usp=sharing">12. VIRENDRA</a></li>
+	</ul>
+</li>
+	<li id="menu-item-2494" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2494 dropdown"><a class="dropdown-item" title="Fase F" href="#">Fase F</a>
+	<ul role="menu" class=" dropdown-menu">
+		<li id="menu-item-2514" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2514"><a class="dropdown-item" title="1. ATREYA" target="_blank" href="https://docs.google.com/spreadsheets/d/1kCBnL2c09esDq6T3nkjZPUlxwI6GwwutW8vHez6_Iak/edit?usp=sharing">1. ATREYA</a></li>
+		<li id="menu-item-2515" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2515"><a class="dropdown-item" title="2. BIMASENA" target="_blank" href="https://docs.google.com/spreadsheets/d/1_0r18a0o1kNXnSWTCQRwTo8er9gKo3VtpLsAfdUeym0/edit?usp=sharing">2. BIMASENA</a></li>
+		<li id="menu-item-2516" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2516"><a class="dropdown-item" title="3. DARUNA" target="_blank" href="https://docs.google.com/spreadsheets/d/1kn3Ml0tzg_8cVPaJPowdei7x4XtkoUQzHVx-DwKFe8g/edit?usp=sharing">3. DARUNA</a></li>
+		<li id="menu-item-2517" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2517"><a class="dropdown-item" title="4. GUWIRATNA" target="_blank" href="https://docs.google.com/spreadsheets/d/1_Wv6orrkMqegUdXNgDFLpuxM-xPDl8NDF00yRVU1rMk/edit?usp=drive_link">4. GUWIRATNA</a></li>
+		<li id="menu-item-2519" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2519"><a class="dropdown-item" title="5. HARJA" target="_blank" href="https://docs.google.com/spreadsheets/d/1Wz9phNTarPJu_WuJFUSTsGLqXCwRR5OkvHaMXk1KqzQ/edit?usp=drive_link">5. HARJA</a></li>
+		<li id="menu-item-2520" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2520"><a class="dropdown-item" title="6. KARSA" target="_blank" href="https://docs.google.com/spreadsheets/d/1vrWU6Bh5gf0vYZQjOI0-PHHNAPe-BEm233Lag0qlbqs/edit?usp=drive_link">6. KARSA</a></li>
+		<li id="menu-item-2521" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2521"><a class="dropdown-item" title="7. MAHAVIRA" target="_blank" href="https://docs.google.com/spreadsheets/d/10Tmj56c92FUDU2cxsZNJ37G7NtQkABGQWctgQHhZAS4/edit?usp=drive_link">7. MAHAVIRA</a></li>
+		<li id="menu-item-2526" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2526"><a class="dropdown-item" title="8. NAMRATA" target="_blank" href="https://docs.google.com/spreadsheets/d/1RcfPpzGIv7G7mGmsdQ3_E8tT7S8bvXWR9zIW_n0bjko/edit?usp=drive_link">8. NAMRATA</a></li>
+		<li id="menu-item-2527" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2527"><a class="dropdown-item" title="9. PRADHANA" target="_blank" href="https://docs.google.com/spreadsheets/d/1zjTUM16hkWmB5fT6MZC0pFGXNcDULbHGthYTKnGBTGY/edit?usp=drive_link">9. PRADHANA</a></li>
+		<li id="menu-item-2528" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2528"><a class="dropdown-item" title="10. RASENDRIA" target="_blank" href="https://docs.google.com/spreadsheets/d/1LpjC7VEg3IrDTV0YJRtVlF9D24rO6d2oycondb06U8c/edit?usp=drive_link">10. RASENDRIA</a></li>
+		<li id="menu-item-2529" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2529"><a class="dropdown-item" title="11. WINDRAYA" target="_blank" href="https://docs.google.com/spreadsheets/d/1UhNyXn3OcHOUMJBdOPMMyeOWZaKOJuZWVUP2siunp54/edit?usp=drive_link">11. WINDRAYA</a></li>
+		<li id="menu-item-2530" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2530"><a class="dropdown-item" title="12. WIYARTA" target="_blank" href="https://docs.google.com/spreadsheets/d/1ajdAu2xjwQH3pB3uHNxwnCxe55a_sE4jMe5gO1svRiY/edit?usp=drive_link">12. WIYARTA</a></li>
+	</ul>
+</li>
+	<li id="menu-item-1988" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1988 dropdown"><a class="dropdown-item" title="FASE F LANJUTAN" href="#">FASE F LANJUTAN</a>
+	<ul role="menu" class=" dropdown-menu">
+		<li id="menu-item-1991" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1991"><a class="dropdown-item" title="1. Amazing" target="_blank" href="https://docs.google.com/spreadsheets/d/1AASGpE5VAYd6-lbof5R8yaMY2J7AMHbS_Gau2BtSkUo/edit?usp=sharing">1. Amazing</a></li>
+		<li id="menu-item-1992" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1992"><a class="dropdown-item" title="2. Bravo" target="_blank" href="https://docs.google.com/spreadsheets/d/11dX5ERH-Y4oLVGG3v06gAfPToUnzblsVhSdlcHXvHE0/edit?usp=sharing">2. Bravo</a></li>
+		<li id="menu-item-1993" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1993"><a class="dropdown-item" title="3. Brilliant" target="_blank" href="https://docs.google.com/spreadsheets/d/1XIBp7Wms5c37yVXl54xjrvD1b5bJ49pfIE52T9fNPPM/edit?usp=sharing">3. Brilliant</a></li>
+		<li id="menu-item-1994" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1994"><a class="dropdown-item" title="4. Excellent" target="_blank" href="https://docs.google.com/spreadsheets/d/1oWu_ibNGXDeEjXvvaIpEXCkWiNZ4t5nIRTYMz4kBcT4/edit?usp=sharing">4. Excellent</a></li>
+		<li id="menu-item-1996" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1996"><a class="dropdown-item" title="5. Fabulous" target="_blank" href="https://docs.google.com/spreadsheets/d/1MHZoMw4AaTBGrPyLA0Vi1rRROl59cDs26vNCuYgygYU/edit?usp=sharing">5. Fabulous</a></li>
+		<li id="menu-item-1997" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1997"><a class="dropdown-item" title="6. Fantastic" target="_blank" href="https://docs.google.com/spreadsheets/d/1DVRDE6_j-saG7OdAo_Dm_Dlf4hqSajCGv7WYHwAdoXE/edit?usp=sharing">6. Fantastic</a></li>
+		<li id="menu-item-1998" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1998"><a class="dropdown-item" title="7. Gorgeous" target="_blank" href="https://docs.google.com/spreadsheets/d/1y4xphfl7NDCji5TpHkA2e_j14tMrtX6ZgLo36-bRpkc/edit?usp=sharing">7. Gorgeous</a></li>
+		<li id="menu-item-1999" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1999"><a class="dropdown-item" title="8. Incredible" target="_blank" href="https://docs.google.com/spreadsheets/d/1lTfJAy9GDSEqlJb2lnDBHihXfIGtxDyfTXFIaFxKdPU/edit?usp=sharing">8. Incredible</a></li>
+		<li id="menu-item-1990" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1990"><a class="dropdown-item" title="9. Marvelous" target="_blank" href="https://docs.google.com/spreadsheets/d/1B2Ce4cR7BomCyFL3PL2T3vOzR8w1Bpvn0Bb4nYB0Ocg/edit?usp=sharing">9. Marvelous</a></li>
+		<li id="menu-item-2000" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2000"><a class="dropdown-item" title="10. Phenomenal" target="_blank" href="https://docs.google.com/spreadsheets/d/1gdr5nLk9jp_20vBIIiiyIyNYE2IsQvfw15WnXaKBNjA/edit?usp=sharing">10. Phenomenal</a></li>
+		<li id="menu-item-2001" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2001"><a class="dropdown-item" title="11. Super" target="_blank" href="https://docs.google.com/spreadsheets/d/1--HGn_7vJk4-RLX95YunLvFdb8uiTvRrdvzlQBwkT0o/edit?usp=sharing">11. Super</a></li>
+		<li id="menu-item-2002" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2002"><a class="dropdown-item" title="12. Wonderful" target="_blank" href="https://docs.google.com/spreadsheets/d/1SXLz_ytGWkNbYx8ySg3OKUwXC6e5cRbNmIVKnHHSk-g/edit?usp=sharing">12. Wonderful</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-1792" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1792"><a class="nav-link" title="Guru, Staf dan Karyawan" href="guru-staf-dan-karyawan/index.html">Guru, Staf dan Karyawan</a></li>
+<li id="menu-item-2632" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2632"><a class="nav-link" title="PROJEK P5" href="projek-p5/index.html">PROJEK P5</a></li>
+<li id="menu-item-2072" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2072 dropdown"><a class="nav-link" title="Alumni" href="daftar-alumni/index.html" data-toggle="dropdown" class="dropdown-toggle">Alumni </a>
+<ul role="menu" class=" dropdown-menu">
+	<li id="menu-item-2069" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2069"><a class="dropdown-item" title="INPUT ALUMNI" href="alumni/index.html">INPUT ALUMNI</a></li>
+</ul>
+</li>
+<li id="menu-item-3098" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3098"><a class="nav-link" title="DAPODIK" href="https://linkfly.to/sman-dupul">DAPODIK</a></li>
+<li id="menu-item-2703" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2703"><a class="nav-link" title="LINK LAINNYA" target="_blank" href="https://lynk.id/c.e.r.d.a.s">LINK LAINNYA</a></li>
+</ul>                </div>    
+                  </div>
+
+                <!-- Right nav -->
+                    <div class="d-none d-lg-block pl-3 ml-auto my-2 my-lg-0 position-relative align-items-center">
+                        <div class="dropdown show mg-search-box pr-2">
+                            <a class="dropdown-toggle msearch ml-auto" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               <i class="fas fa-search"></i>
+                            </a>
+
+                            <div class="dropdown-menu searchinner" aria-labelledby="dropdownMenuLink">
+                        <form role="search" method="get" id="searchform" action="https://sman20batam.sch.id/">
+  <div class="input-group">
+    <input type="search" class="form-control" placeholder="Search" value="" name="s" />
+    <span class="input-group-btn btn-default">
+    <button type="submit" class="btn"> <i class="fas fa-search"></i> </button>
+    </span> </div>
+</form>                      </div>
+                        </div>
+                        
+                    </div>
+                    <!-- /Right nav -->  
+          </div>
+      </nav> <!-- /Navigation -->
+    </div>
+</header>
+<div class="clearfix"></div>
+            <!-- Excluive line END -->
+			<section class="mg-latest-news-sec">
+				<div class="container-fluid">
+			<div class="mg-latest-news">
+			<div class="bn_title">
+			<h2>
+													Latest Post<span></span>
+											</h2>
+			</div>
+			
+			<div class="mg-latest-news-slider marquee">
+																		<a href="">
+						<span>SELAMAT DATANG DI WEBSITE SMK NURUL ANWAR WEBSITE INI DALAM TAHAP PENGEMBANGAN</span>
+					 </a>
+														<a href="">
+						<span>PENERIMAAN PESERTA DIDIK BARU (PPDB) TA 2024/2025</span>
+					 </a>
+											</div>
+			</div>
+			</div>
+			</section>                   
+        <!--==/ Home Slider ==-->
+                <!-- end slider-section -->
+        <!--==================== Newsup breadcrumb section ====================-->
+<div class="mg-breadcrumb-section" style='background: url("wp-content/uploads/2023/12/smknurulanwar.jpg" ) repeat scroll center 0 #143745;'>
+  <div class="overlay">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12 col-sm-12">
+			    <div class="mg-breadcrumb-title">
+					<h1>SIARAN RADIO EDUKASI</h1>
+					<div class="alert alert-warning">						
+						<button data-dismiss="alert" class="close" type="button"></button>
+						<audio autoplay controls>
+  <source src="http://192.168.1.8:8000/live" type="audio/mpeg"></audio>
+					</div>
+                      <h1>WEBSITE DALAM TAHAP PENGEMBANGAN</h1>
+                   </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
+<div class="clearfix"></div><!--==================== main content section ====================-->
+<main id="content">
+    <div class="container-fluid">
+      <div class="row">
+		<!-- Blog Area -->
+						<div class="col-md-8">
+				<div class="mg-card-box padding-20">
+					<div data-elementor-type="wp-page" data-elementor-id="6" class="elementor elementor-6">
+									
+				</div>
+		<noscript class="ninja-forms-noscript-message">
+    Notice: JavaScript is required for this content.</noscript><div id="nf-form-1-cont" class="nf-form-cont" aria-live="polite" aria-labelledby="nf-form-title-1" aria-describedby="nf-form-errors-1" role="form">
+
+    <div class="nf-loading-spinner"></div>
+
+</div>
+        <!-- TODO: Move to Template File. -->
+        <script>var formDisplay=1;var nfForms=nfForms||[];var form=[];form.id='1';form.settings={"title":"Contact Me","key":"","created_at":"2022-11-11 03:40:50","default_label_pos":"above","conditions":[],"objectType":"Form Setting","editActive":"","show_title":"1","clear_complete":"1","hide_complete":"1","wrapper_class":"","element_class":"","add_submit":"1","logged_in":"","not_logged_in_msg":"","sub_limit_number":"","sub_limit_msg":"","calculations":[],"formContentData":[{"order":"0","cells":[{"order":"0","fields":["name"],"width":"100"}]},{"order":"1","cells":[{"order":"0","fields":["email"],"width":"100"}]},{"order":"2","cells":[{"order":"0","fields":["message"],"width":"100"}]},{"order":"3","cells":[{"order":"0","fields":["submit"],"width":"100"}]}],"container_styles_background-color":"","container_styles_border":"","container_styles_border-style":"","container_styles_border-color":"","container_styles_color":"","container_styles_height":"","container_styles_width":"","container_styles_font-size":"","container_styles_margin":"","container_styles_padding":"","container_styles_display":"","container_styles_float":"","container_styles_show_advanced_css":"0","container_styles_advanced":"","title_styles_background-color":"","title_styles_border":"","title_styles_border-style":"","title_styles_border-color":"","title_styles_color":"","title_styles_height":"","title_styles_width":"","title_styles_font-size":"","title_styles_margin":"","title_styles_padding":"","title_styles_display":"","title_styles_float":"","title_styles_show_advanced_css":"0","title_styles_advanced":"","row_styles_background-color":"","row_styles_border":"","row_styles_border-style":"","row_styles_border-color":"","row_styles_color":"","row_styles_height":"","row_styles_width":"","row_styles_font-size":"","row_styles_margin":"","row_styles_padding":"","row_styles_display":"","row_styles_show_advanced_css":"0","row_styles_advanced":"","row-odd_styles_background-color":"","row-odd_styles_border":"","row-odd_styles_border-style":"","row-odd_styles_border-color":"","row-odd_styles_color":"","row-odd_styles_height":"","row-odd_styles_width":"","row-odd_styles_font-size":"","row-odd_styles_margin":"","row-odd_styles_padding":"","row-odd_styles_display":"","row-odd_styles_show_advanced_css":"0","row-odd_styles_advanced":"","success-msg_styles_background-color":"","success-msg_styles_border":"","success-msg_styles_border-style":"","success-msg_styles_border-color":"","success-msg_styles_color":"","success-msg_styles_height":"","success-msg_styles_width":"","success-msg_styles_font-size":"","success-msg_styles_margin":"","success-msg_styles_padding":"","success-msg_styles_display":"","success-msg_styles_show_advanced_css":"0","success-msg_styles_advanced":"","error_msg_styles_background-color":"","error_msg_styles_border":"","error_msg_styles_border-style":"","error_msg_styles_border-color":"","error_msg_styles_color":"","error_msg_styles_height":"","error_msg_styles_width":"","error_msg_styles_font-size":"","error_msg_styles_margin":"","error_msg_styles_padding":"","error_msg_styles_display":"","error_msg_styles_show_advanced_css":"0","error_msg_styles_advanced":"","ninjaForms":"Ninja Forms","changeEmailErrorMsg":"Please enter a valid email address!","changeDateErrorMsg":"Please enter a valid date!","confirmFieldErrorMsg":"These fields must match!","fieldNumberNumMinError":"Number Min Error","fieldNumberNumMaxError":"Number Max Error","fieldNumberIncrementBy":"Please increment by ","fieldTextareaRTEInsertLink":"Insert Link","fieldTextareaRTEInsertMedia":"Insert Media","fieldTextareaRTESelectAFile":"Select a file","formErrorsCorrectErrors":"Please correct errors before submitting this form.","formHoneypot":"If you are a human seeing this field, please leave it empty.","validateRequiredField":"This is a required field.","honeypotHoneypotError":"Honeypot Error","fileUploadOldCodeFileUploadInProgress":"File Upload in Progress.","fileUploadOldCodeFileUpload":"FILE UPLOAD","currencySymbol":false,"fieldsMarkedRequired":"Fields marked with an <span class=\"ninja-forms-req-symbol\">*<\/span> are required","thousands_sep":",","decimal_point":".","siteLocale":"en_US","dateFormat":"m\/d\/Y","startOfWeek":"1","of":"of","previousMonth":"Previous Month","nextMonth":"Next Month","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthsShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"weekdaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"weekdaysMin":["Su","Mo","Tu","We","Th","Fr","Sa"],"embed_form":"","currency_symbol":"","beforeForm":"","beforeFields":"","afterFields":"","afterForm":""};form.fields=[{"label":"Name","key":"name","parent_id":1,"type":"textbox","created_at":"2022-11-11 03:40:50","label_pos":"above","required":1,"order":1,"placeholder":"","default":"","wrapper_class":"","element_class":"","objectType":"Field","objectDomain":"fields","editActive":"","container_class":"","input_limit":"","input_limit_type":"characters","input_limit_msg":"Character(s) left","manual_key":"","disable_input":"","admin_label":"","help_text":"","desc_text":"","disable_browser_autocomplete":"","mask":"","custom_mask":"","wrap_styles_background-color":"","wrap_styles_border":"","wrap_styles_border-style":"","wrap_styles_border-color":"","wrap_styles_color":"","wrap_styles_height":"","wrap_styles_width":"","wrap_styles_font-size":"","wrap_styles_margin":"","wrap_styles_padding":"","wrap_styles_display":"","wrap_styles_float":"","wrap_styles_show_advanced_css":0,"wrap_styles_advanced":"","label_styles_background-color":"","label_styles_border":"","label_styles_border-style":"","label_styles_border-color":"","label_styles_color":"","label_styles_height":"","label_styles_width":"","label_styles_font-size":"","label_styles_margin":"","label_styles_padding":"","label_styles_display":"","label_styles_float":"","label_styles_show_advanced_css":0,"label_styles_advanced":"","element_styles_background-color":"","element_styles_border":"","element_styles_border-style":"","element_styles_border-color":"","element_styles_color":"","element_styles_height":"","element_styles_width":"","element_styles_font-size":"","element_styles_margin":"","element_styles_padding":"","element_styles_display":"","element_styles_float":"","element_styles_show_advanced_css":0,"element_styles_advanced":"","cellcid":"c3277","id":1,"beforeField":"","afterField":"","value":"","parentType":"textbox","element_templates":["textbox","input"],"old_classname":"","wrap_template":"wrap"},{"label":"Email","key":"email","parent_id":1,"type":"email","created_at":"2022-11-11 03:40:50","label_pos":"above","required":1,"order":2,"placeholder":"","default":"","wrapper_class":"","element_class":"","objectType":"Field","objectDomain":"fields","editActive":"","container_class":"","admin_label":"","help_text":"","desc_text":"","wrap_styles_background-color":"","wrap_styles_border":"","wrap_styles_border-style":"","wrap_styles_border-color":"","wrap_styles_color":"","wrap_styles_height":"","wrap_styles_width":"","wrap_styles_font-size":"","wrap_styles_margin":"","wrap_styles_padding":"","wrap_styles_display":"","wrap_styles_float":"","wrap_styles_show_advanced_css":0,"wrap_styles_advanced":"","label_styles_background-color":"","label_styles_border":"","label_styles_border-style":"","label_styles_border-color":"","label_styles_color":"","label_styles_height":"","label_styles_width":"","label_styles_font-size":"","label_styles_margin":"","label_styles_padding":"","label_styles_display":"","label_styles_float":"","label_styles_show_advanced_css":0,"label_styles_advanced":"","element_styles_background-color":"","element_styles_border":"","element_styles_border-style":"","element_styles_border-color":"","element_styles_color":"","element_styles_height":"","element_styles_width":"","element_styles_font-size":"","element_styles_margin":"","element_styles_padding":"","element_styles_display":"","element_styles_float":"","element_styles_show_advanced_css":0,"element_styles_advanced":"","cellcid":"c3281","id":2,"beforeField":"","afterField":"","value":"","parentType":"email","element_templates":["email","input"],"old_classname":"","wrap_template":"wrap"},{"label":"Message","key":"message","parent_id":1,"type":"textarea","created_at":"2022-11-11 03:40:50","label_pos":"above","required":1,"order":3,"placeholder":"","default":"","wrapper_class":"","element_class":"","objectType":"Field","objectDomain":"fields","editActive":"","container_class":"","input_limit":"","input_limit_type":"characters","input_limit_msg":"Character(s) left","manual_key":"","disable_input":"","admin_label":"","help_text":"","desc_text":"","disable_browser_autocomplete":"","textarea_rte":"","disable_rte_mobile":"","textarea_media":"","wrap_styles_background-color":"","wrap_styles_border":"","wrap_styles_border-style":"","wrap_styles_border-color":"","wrap_styles_color":"","wrap_styles_height":"","wrap_styles_width":"","wrap_styles_font-size":"","wrap_styles_margin":"","wrap_styles_padding":"","wrap_styles_display":"","wrap_styles_float":"","wrap_styles_show_advanced_css":0,"wrap_styles_advanced":"","label_styles_background-color":"","label_styles_border":"","label_styles_border-style":"","label_styles_border-color":"","label_styles_color":"","label_styles_height":"","label_styles_width":"","label_styles_font-size":"","label_styles_margin":"","label_styles_padding":"","label_styles_display":"","label_styles_float":"","label_styles_show_advanced_css":0,"label_styles_advanced":"","element_styles_background-color":"","element_styles_border":"","element_styles_border-style":"","element_styles_border-color":"","element_styles_color":"","element_styles_height":"","element_styles_width":"","element_styles_font-size":"","element_styles_margin":"","element_styles_padding":"","element_styles_display":"","element_styles_float":"","element_styles_show_advanced_css":0,"element_styles_advanced":"","cellcid":"c3284","id":3,"beforeField":"","afterField":"","value":"","parentType":"textarea","element_templates":["textarea","input"],"old_classname":"","wrap_template":"wrap"},{"label":"Submit","key":"submit","parent_id":1,"type":"submit","created_at":"2022-11-11 03:40:50","processing_label":"Processing","order":5,"objectType":"Field","objectDomain":"fields","editActive":"","container_class":"","element_class":"","wrap_styles_background-color":"","wrap_styles_border":"","wrap_styles_border-style":"","wrap_styles_border-color":"","wrap_styles_color":"","wrap_styles_height":"","wrap_styles_width":"","wrap_styles_font-size":"","wrap_styles_margin":"","wrap_styles_padding":"","wrap_styles_display":"","wrap_styles_float":"","wrap_styles_show_advanced_css":0,"wrap_styles_advanced":"","label_styles_background-color":"","label_styles_border":"","label_styles_border-style":"","label_styles_border-color":"","label_styles_color":"","label_styles_height":"","label_styles_width":"","label_styles_font-size":"","label_styles_margin":"","label_styles_padding":"","label_styles_display":"","label_styles_float":"","label_styles_show_advanced_css":0,"label_styles_advanced":"","element_styles_background-color":"","element_styles_border":"","element_styles_border-style":"","element_styles_border-color":"","element_styles_color":"","element_styles_height":"","element_styles_width":"","element_styles_font-size":"","element_styles_margin":"","element_styles_padding":"","element_styles_display":"","element_styles_float":"","element_styles_show_advanced_css":0,"element_styles_advanced":"","submit_element_hover_styles_background-color":"","submit_element_hover_styles_border":"","submit_element_hover_styles_border-style":"","submit_element_hover_styles_border-color":"","submit_element_hover_styles_color":"","submit_element_hover_styles_height":"","submit_element_hover_styles_width":"","submit_element_hover_styles_font-size":"","submit_element_hover_styles_margin":"","submit_element_hover_styles_padding":"","submit_element_hover_styles_display":"","submit_element_hover_styles_float":"","submit_element_hover_styles_show_advanced_css":0,"submit_element_hover_styles_advanced":"","cellcid":"c3287","id":4,"beforeField":"","afterField":"","value":"","label_pos":"above","parentType":"textbox","element_templates":["submit","button","input"],"old_classname":"","wrap_template":"wrap-no-label"}];nfForms.push(form);</script>
+        <div class="addtoany_share_save_container addtoany_content addtoany_content_bottom">
+			<div class="a2a_kit a2a_kit_size_32 addtoany_list" data-a2a-url="https://sman20batam.sch.id/" data-a2a-title="Home"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fsman20batam.sch.id%2F&amp;linkname=Home" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Fsman20batam.sch.id%2F&amp;linkname=Home" title="Email" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_whatsapp" href="https://www.addtoany.com/add_to/whatsapp?linkurl=https%3A%2F%2Fsman20batam.sch.id%2F&amp;linkname=Home" title="WhatsApp" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_telegram" href="https://www.addtoany.com/add_to/telegram?linkurl=https%3A%2F%2Fsman20batam.sch.id%2F&amp;linkname=Home" title="Telegram" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_line" href="https://www.addtoany.com/add_to/line?linkurl=https%3A%2F%2Fsman20batam.sch.id%2F&amp;linkname=Home" title="Line" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fsman20batam.sch.id%2F&amp;linkname=Home" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_copy_link" href="https://www.addtoany.com/add_to/copy_link?linkurl=https%3A%2F%2Fsman20batam.sch.id%2F&amp;linkname=Home" title="Copy Link" rel="nofollow noopener" target="_blank"></a><a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a></div></div>	
+		</div>
+			</div>
+			<!--Sidebar Area-->
+			
+                </div>
+            </div>
+        </div>
+<!--==================== FOOTER AREA ====================-->
+        <footer> 
+            <div class="overlay" style="background-color: ;">
+                <!--Start mg-footer-widget-area-->
+                                 <div class="mg-footer-widget-area">
+                    <div class="container-fluid">
+                        <div class="row">
+                          <div id="text-1" class="col-md-4 col-sm-6 rotateInDownLeft animated mg-widget widget_text"><h6>TENTANG KAMI&#8221;</h6>			
+							<div class="textwidget"><div class="textwidget">
+							</div></div>
+		</div>                        </div>
+                        <!--/row-->
+                    </div>
+                    <!--/container-->
+                </div>
+                                 <!--End mg-footer-widget-area-->
+                <!--Start mg-footer-widget-area-->
+                <div class="mg-footer-bottom-area">
+                    <div class="container-fluid">
+                        <div class="divide-line"></div>
+                        <div class="row align-items-center">
+                            <!--col-md-4-->
+                            <div class="col-md-6">
+                               <span class="navbar-brand"><img width="174" height="207" src="wp-content/uploads/2022/11/logosmkgg.png" class="custom-logo" alt="" decoding="async" /></span>                              <div class="site-branding-text">
+                              <h1 class="site-title"> <a href="index.html" rel="home">SMK NURUL ANWAR- C.E.R.D.A.S. Berkarakter</a></h1>
+                              <p class="site-description">(C)akap. (E)tika. (R)eligius. (D)igital. (A)sri. (S)istematis.</p>
+                              </div>
+                                                          </div>
+
+                             
+                            <div class="col-md-6 text-right text-xs">
+                                
+                            <ul class="mg-social">
+                                                                        <a  target="_blank" href="https://www.facebook.com/profile.php?id=100078842861416"><li><span class="icon-soci facebook"><i class="fab fa-facebook"></i></span> </li>
+                                    </a>
+                                                                        <a target="_blank" href="#">
+                                                                        <a target="_blank"  href="#">
+                                                                         <a target="_blank"  href="https://www.instagram.com/sman20batam/?hl=id"><li><span class="icon-soci instagram"><i class="fab fa-instagram"></i></span>
+                                    </li></a>
+                                                                                                            <a target="_blank"  href="https://www.youtube.com/channel/UCI6LCTcO5zLr5lChAdugCrQ">
+                                    <li><span class="icon-soci youtube"><i class="fab fa-youtube"></i></span></li></a>
+                                    
+                                                                 </ul>
+
+
+                            </div>
+                            <!--/col-md-4-->  
+                             
+                        </div>
+                        <!--/row-->
+                    </div>
+                    <!--/container-->
+                </div>
+                <!--End mg-footer-widget-area-->
+
+                <div class="mg-footer-copyright">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6 text-xs">
+                                <p>
+                                <a href="https://www.smknurulanwar.sch.id/">
+								SUPPORT by CABDIN SAMPANG</a>
+								</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/overlay-->
+        </footer>
+        <!--/footer-->
+    </div>
+    <!--/wrapper-->
+    <!--Scroll To Top-->
+    <a href="#" class="ta_upscr bounceInup animated"><i class="fa fa-angle-up"></i></a>
+    <!--/Scroll To Top-->
+<!-- /Scroll To Top -->
+<script>
+                jQuery(function($){
+
+                    
+                });
+            </script>
+            <div id="fb-root"></div>
+            		<script>
+		( function ( body ) {
+			'use strict';
+			body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+		} )( document.body );
+		</script>
+		<script>
+jQuery('a,input').bind('focus', function() {
+    if(!jQuery(this).closest(".menu-item").length && ( jQuery(window).width() <= 992) ) {
+    jQuery('.navbar-collapse').removeClass('show');
+}})
+</script>
+<script> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","all_selected_text":"All items on this page were selected. ","select_all_link":"Select all pages","clear_selection":"Clear Selection.","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesMin":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done","today":"Today","clear":"Clear"}};/* ]]> */ </script><link rel='stylesheet' id='dashicons-css' href='wp-includes/css/dashicons6a4d.css?ver=6.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='nf-display-css' href='wp-content/plugins/ninja-forms/assets/css/display-opinions-light6a4d.css?ver=6.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='nf-font-awesome-css' href='wp-content/plugins/ninja-forms/assets/css/font-awesome.min6a4d.css?ver=6.1.1' type='text/css' media='all' />
+<style id='core-block-supports-inline-css' type='text/css'>
+/**
+ * Core styles: block-supports
+ */
+
+</style>
+<script type='text/javascript' src='wp-includes/js/dist/vendor/regenerator-runtime3937.js?ver=0.13.9' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='wp-includes/js/dist/vendor/wp-polyfill2c7c.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/sman20batam.sch.id\/wp-json\/","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/contact-form-7/includes/js/index5406.js?ver=5.5.6' id='contact-form-7-js'></script>
+<script type='text/javascript' src='wp-includes/js/dist/hooksd0bb.js?ver=3ad9b2919ff3fc96ce63' id='wp-hooks-js'></script>
+<script type='text/javascript' src='wp-includes/js/dist/i18nafbc.js?ver=0343553cc8c879477a4a' id='wp-i18n-js'></script>
+<script type='text/javascript' id='wp-i18n-js-after'>
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type='text/javascript' src='wp-includes/js/jquery/jquery.formb2f9.js?ver=4.3.0' id='jquery-form-js'></script>
+<script src='wp-content/plugins/the-events-calendar/common/src/resources/js/underscore-before.js'></script>
+<script type='text/javascript' src='wp-includes/js/underscore.mind584.js?ver=1.13.4' id='underscore-js'></script>
+<script src='wp-content/plugins/the-events-calendar/common/src/resources/js/underscore-after.js'></script>
+<script type='text/javascript' src='wp-includes/js/backbone.min330a.js?ver=1.4.1' id='backbone-js'></script>
+<script type='text/javascript' src='wp-content/plugins/ninja-forms/assets/js/min/front-end-deps0527.js?ver=3.6.9' id='nf-front-end-deps-js'></script>
+<script type='text/javascript' id='nf-front-end-js-extra'>
+/* <![CDATA[ */
+var nfi18n = {"ninjaForms":"Ninja Forms","changeEmailErrorMsg":"Please enter a valid email address!","changeDateErrorMsg":"Please enter a valid date!","confirmFieldErrorMsg":"These fields must match!","fieldNumberNumMinError":"Number Min Error","fieldNumberNumMaxError":"Number Max Error","fieldNumberIncrementBy":"Please increment by ","fieldTextareaRTEInsertLink":"Insert Link","fieldTextareaRTEInsertMedia":"Insert Media","fieldTextareaRTESelectAFile":"Select a file","formErrorsCorrectErrors":"Please correct errors before submitting this form.","formHoneypot":"If you are a human seeing this field, please leave it empty.","validateRequiredField":"This is a required field.","honeypotHoneypotError":"Honeypot Error","fileUploadOldCodeFileUploadInProgress":"File Upload in Progress.","fileUploadOldCodeFileUpload":"FILE UPLOAD","currencySymbol":"","fieldsMarkedRequired":"Fields marked with an <span class=\"ninja-forms-req-symbol\">*<\/span> are required","thousands_sep":",","decimal_point":".","siteLocale":"en_US","dateFormat":"m\/d\/Y","startOfWeek":"1","of":"of","previousMonth":"Previous Month","nextMonth":"Next Month","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthsShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"weekdaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"weekdaysMin":["Su","Mo","Tu","We","Th","Fr","Sa"]};
+var nfFrontEnd = {"adminAjax":"https:\/\/sman20batam.sch.id\/wp-admin\/admin-ajax.php","ajaxNonce":"0db1943349","requireBaseUrl":"https:\/\/sman20batam.sch.id\/wp-content\/plugins\/ninja-forms\/assets\/js\/","use_merge_tags":{"user":{"address":"address","textbox":"textbox","button":"button","checkbox":"checkbox","city":"city","confirm":"confirm","date":"date","email":"email","firstname":"firstname","html":"html","hidden":"hidden","lastname":"lastname","listcheckbox":"listcheckbox","listcountry":"listcountry","listimage":"listimage","listmultiselect":"listmultiselect","listradio":"listradio","listselect":"listselect","liststate":"liststate","note":"note","number":"number","password":"password","passwordconfirm":"passwordconfirm","product":"product","quantity":"quantity","recaptcha":"recaptcha","recaptcha_v3":"recaptcha_v3","repeater":"repeater","shipping":"shipping","spam":"spam","starrating":"starrating","submit":"submit","terms":"terms","textarea":"textarea","total":"total","unknown":"unknown","zip":"zip","hr":"hr"},"post":{"address":"address","textbox":"textbox","button":"button","checkbox":"checkbox","city":"city","confirm":"confirm","date":"date","email":"email","firstname":"firstname","html":"html","hidden":"hidden","lastname":"lastname","listcheckbox":"listcheckbox","listcountry":"listcountry","listimage":"listimage","listmultiselect":"listmultiselect","listradio":"listradio","listselect":"listselect","liststate":"liststate","note":"note","number":"number","password":"password","passwordconfirm":"passwordconfirm","product":"product","quantity":"quantity","recaptcha":"recaptcha","recaptcha_v3":"recaptcha_v3","repeater":"repeater","shipping":"shipping","spam":"spam","starrating":"starrating","submit":"submit","terms":"terms","textarea":"textarea","total":"total","unknown":"unknown","zip":"zip","hr":"hr"},"system":{"address":"address","textbox":"textbox","button":"button","checkbox":"checkbox","city":"city","confirm":"confirm","date":"date","email":"email","firstname":"firstname","html":"html","hidden":"hidden","lastname":"lastname","listcheckbox":"listcheckbox","listcountry":"listcountry","listimage":"listimage","listmultiselect":"listmultiselect","listradio":"listradio","listselect":"listselect","liststate":"liststate","note":"note","number":"number","password":"password","passwordconfirm":"passwordconfirm","product":"product","quantity":"quantity","recaptcha":"recaptcha","recaptcha_v3":"recaptcha_v3","repeater":"repeater","shipping":"shipping","spam":"spam","starrating":"starrating","submit":"submit","terms":"terms","textarea":"textarea","total":"total","unknown":"unknown","zip":"zip","hr":"hr"},"fields":{"address":"address","textbox":"textbox","button":"button","checkbox":"checkbox","city":"city","confirm":"confirm","date":"date","email":"email","firstname":"firstname","html":"html","hidden":"hidden","lastname":"lastname","listcheckbox":"listcheckbox","listcountry":"listcountry","listimage":"listimage","listmultiselect":"listmultiselect","listradio":"listradio","listselect":"listselect","liststate":"liststate","note":"note","number":"number","password":"password","passwordconfirm":"passwordconfirm","product":"product","quantity":"quantity","recaptcha":"recaptcha","recaptcha_v3":"recaptcha_v3","repeater":"repeater","shipping":"shipping","spam":"spam","starrating":"starrating","submit":"submit","terms":"terms","textarea":"textarea","total":"total","unknown":"unknown","zip":"zip","hr":"hr"},"calculations":{"html":"html","hidden":"hidden","note":"note","unknown":"unknown"}},"opinionated_styles":"light"};
+var nfRepeater = {"add_repeater_child_field_text":"Add "};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/ninja-forms/assets/js/min/front-end0527.js?ver=3.6.9' id='nf-front-end-js'></script>
+<script type='text/javascript' src='wp-content/themes/newsup/js/custom6a4d.js?ver=6.1.1' id='newsup-custom-js'></script>
+<script type='text/javascript' src='wp-content/themes/newsup/js/custom-time6a4d.js?ver=6.1.1' id='newsup-custom-time-js'></script>
+<script type='text/javascript' src='wp-content/plugins/elementor/assets/js/webpack.runtime3ab2.js?ver=3.6.5' id='elementor-webpack-runtime-js'></script>
+<script type='text/javascript' src='wp-content/plugins/elementor/assets/js/frontend-modules3ab2.js?ver=3.6.5' id='elementor-frontend-modules-js'></script>
+<script type='text/javascript' src='wp-content/plugins/elementor/assets/lib/waypoints/waypoints05da.js?ver=4.0.2' id='elementor-waypoints-js'></script>
+<script type='text/javascript' src='wp-includes/js/jquery/ui/core3f14.js?ver=1.13.2' id='jquery-ui-core-js'></script>
+<script type='text/javascript' id='elementor-frontend-js-before'>
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":true},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Extra","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Extra","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.6.5","is_static":false,"experimentalFeatures":{"e_dom_optimization":true,"e_optimized_assets_loading":true,"e_optimized_css_loading":true,"a11y_improvements":true,"e_import_export":true,"additional_custom_breakpoints":true,"e_hidden_wordpress_widgets":true,"landing-pages":true,"elements-color-picker":true,"favorite-widgets":true,"admin-top-bar":true},"urls":{"assets":"https:\/\/sman20batam.sch.id\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":6,"title":"SMAN%2020%20BATAM%20%E2%80%93%20C.E.R.D.A.S.%20Berkarakter%20%E2%80%93%20%28C%29akap.%20%28E%29tika.%20%28R%29eligius.%20%28D%29igital.%20%28A%29sri.%20%28S%29istematis.","excerpt":"","featuredImage":false}};
+</script>
+<script type='text/javascript' src='wp-content/plugins/elementor/assets/js/frontend3ab2.js?ver=3.6.5' id='elementor-frontend-js'></script>
+<script type='text/javascript' id='wp-util-js-extra'>
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-includes/js/wp-util6a4d.js?ver=6.1.1' id='wp-util-js'></script>
+<script type='text/javascript' id='wpforms-elementor-js-extra'>
+/* <![CDATA[ */
+var wpformsElementorVars = {"captcha_provider":"recaptcha","recaptcha_type":"v2"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='wp-content/plugins/wpforms-lite/assets/js/integrations/elementor/frontend.minb34d.js?ver=1.7.4' id='wpforms-elementor-js'></script>
+	<script>
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	
+<script id="tmpl-nf-empty" type="text/template">
+
+</script>
+<script id="tmpl-nf-before-form" type="text/template">
+	{{{ data.beforeForm }}}
+</script><script id="tmpl-nf-after-form" type="text/template">
+	{{{ data.afterForm }}}
+</script><script id="tmpl-nf-before-fields" type="text/template">
+    <div class="nf-form-fields-required">{{{ data.renderFieldsMarkedRequired() }}}</div>
+    {{{ data.beforeFields }}}
+</script><script id="tmpl-nf-after-fields" type="text/template">
+    {{{ data.afterFields }}}
+    <div id="nf-form-errors-{{{ data.id }}}" class="nf-form-errors" role="alert"></div>
+    <div class="nf-form-hp"></div>
+</script>
+<script id="tmpl-nf-before-field" type="text/template">
+    {{{ data.beforeField }}}
+</script><script id="tmpl-nf-after-field" type="text/template">
+    {{{ data.afterField }}}
+</script><script id="tmpl-nf-form-layout" type="text/template">
+	<form>
+		<div>
+			<div class="nf-before-form-content"></div>
+			<div class="nf-form-content {{{ data.element_class }}}"></div>
+			<div class="nf-after-form-content"></div>
+		</div>
+	</form>
+</script><script id="tmpl-nf-form-hp" type="text/template">
+	<label for="nf-field-hp-{{{ data.id }}}" aria-hidden="true">
+		{{{ nfi18n.formHoneypot }}}
+		<input id="nf-field-hp-{{{ data.id }}}" name="nf-field-hp" class="nf-element nf-field-hp" type="text" value=""/>
+	</label>
+</script>
+<script id="tmpl-nf-field-layout" type="text/template">
+    <div id="nf-field-{{{ data.id }}}-container" class="nf-field-container {{{ data.type }}}-container {{{ data.renderContainerClass() }}}">
+        <div class="nf-before-field"></div>
+        <div class="nf-field"></div>
+        <div class="nf-after-field"></div>
+    </div>
+</script>
+<script id="tmpl-nf-field-before" type="text/template">
+    {{{ data.beforeField }}}
+</script><script id="tmpl-nf-field-after" type="text/template">
+    <#
+    /*
+     * Render our input limit section if that setting exists.
+     */
+    #>
+    <div class="nf-input-limit"></div>
+    <#
+    /*
+     * Render our error section if we have an error.
+     */
+    #>
+    <div id="nf-error-{{{ data.id }}}" class="nf-error-wrap nf-error" role="alert"></div>
+    <#
+    /*
+     * Render any custom HTML after our field.
+     */
+    #>
+    {{{ data.afterField }}}
+</script>
+<script id="tmpl-nf-field-wrap" type="text/template">
+	<div id="nf-field-{{{ data.id }}}-wrap" class="{{{ data.renderWrapClass() }}}" data-field-id="{{{ data.id }}}">
+		<#
+		/*
+		 * This is our main field template. It's called for every field type.
+		 * Note that must have ONE top-level, wrapping element. i.e. a div/span/etc that wraps all of the template.
+		 */
+        #>
+		<#
+		/*
+		 * Render our label.
+		 */
+        #>
+		{{{ data.renderLabel() }}}
+		<#
+		/*
+		 * Render our field element. Uses the template for the field being rendered.
+		 */
+        #>
+		<div class="nf-field-element">{{{ data.renderElement() }}}</div>
+		<#
+		/*
+		 * Render our Description Text.
+		 */
+        #>
+		{{{ data.renderDescText() }}}
+	</div>
+</script>
+<script id="tmpl-nf-field-wrap-no-label" type="text/template">
+    <div id="nf-field-{{{ data.id }}}-wrap" class="{{{ data.renderWrapClass() }}}" data-field-id="{{{ data.id }}}">
+        <div class="nf-field-label"></div>
+        <div class="nf-field-element">{{{ data.renderElement() }}}</div>
+        <div class="nf-error-wrap"></div>
+    </div>
+</script>
+<script id="tmpl-nf-field-wrap-no-container" type="text/template">
+
+        {{{ data.renderElement() }}}
+
+        <div class="nf-error-wrap"></div>
+</script>
+<script id="tmpl-nf-field-label" type="text/template">
+	<div class="nf-field-label"><label for="nf-field-{{{ data.id }}}"
+	                                   id="nf-label-field-{{{ data.id }}}"
+	                                   class="{{{ data.renderLabelClasses() }}}">{{{ data.label }}} {{{ ( 'undefined' != typeof data.required && 1 == data.required ) ? '<span class="ninja-forms-req-symbol">*</span>' : '' }}} {{{ data.maybeRenderHelp() }}}</label></div>
+</script>
+<script id="tmpl-nf-field-error" type="text/template">
+	<div class="nf-error-msg nf-error-{{{ data.id }}}">{{{ data.msg }}}</div>
+</script><script id="tmpl-nf-form-error" type="text/template">
+	<div class="nf-error-msg nf-error-{{{ data.id }}}">{{{ data.msg }}}</div>
+</script><script id="tmpl-nf-field-input-limit" type="text/template">
+    {{{ data.currentCount() }}} {{{ nfi18n.of }}} {{{ data.input_limit }}} {{{ data.input_limit_msg }}}
+</script><script id="tmpl-nf-field-null" type="text/template">
+</script><script id="tmpl-nf-field-textbox" type="text/template">
+	<input
+			type="text"
+			value="{{{ data.value }}}"
+			class="{{{ data.renderClasses() }}} nf-element"
+			{{{ data.renderPlaceholder() }}}
+			{{{ data.maybeDisabled() }}}
+			{{{ data.maybeInputLimit() }}}
+
+			id="nf-field-{{{ data.id }}}"
+			<# if( ! data.disable_browser_autocomplete && -1 < [ 'city', 'zip' ].indexOf( data.type ) ){ #>
+				name="{{ data.custom_name_attribute || 'nf-field-' + data.id + '-' + data.type }}"
+				autocomplete="on"
+			<# } else { #>
+				name="{{ data.custom_name_attribute || 'nf-field-' + data.id }}"
+				{{{ data.maybeDisableAutocomplete() }}}
+			<# } #>
+
+			aria-invalid="false"
+			aria-describedby="nf-error-{{{ data.id }}}"
+			aria-labelledby="nf-label-field-{{{ data.id }}}"
+
+			{{{ data.maybeRequired() }}}
+	>
+</script>
+<script id='tmpl-nf-field-input' type='text/template'>
+    <input id="nf-field-{{{ data.id }}}" name="nf-field-{{{ data.id }}}" aria-invalid="false" aria-describedby="nf-error-{{{ data.id }}}" class="{{{ data.renderClasses() }}} nf-element" type="text" value="{{{ data.value }}}" {{{ data.renderPlaceholder() }}} {{{ data.maybeDisabled() }}}
+           aria-labelledby="nf-label-field-{{{ data.id }}}"
+
+            {{{ data.maybeRequired() }}}
+    >
+</script>
+<script id="tmpl-nf-field-email" type="text/template">
+	<input
+			type="email"
+			value="{{{ data.value }}}"
+			class="{{{ data.renderClasses() }}} nf-element"
+
+			id="nf-field-{{{ data.id }}}"
+			<# if( ! data.disable_browser_autocompletes ){ #>
+			name="{{ data.custom_name_attribute || 'nf-field-' + data.id + '-' + data.type }}"
+			autocomplete="email"
+			<# } else { #>
+			name="{{ data.custom_name_attribute || 'nf-field-' + data.id }}"
+			{{{ data.maybeDisableAutocomplete() }}}
+			<# } #>
+			{{{ data.renderPlaceholder() }}}
+			{{{ data.maybeDisabled() }}}
+
+			aria-invalid="false"
+			aria-describedby="nf-error-{{{ data.id }}}"
+			aria-labelledby="nf-label-field-{{{ data.id }}}"
+
+			{{{ data.maybeRequired() }}}
+	>
+</script>
+<script id="tmpl-nf-field-textarea" type="text/template">
+    <textarea id="nf-field-{{{ data.id }}}" name="nf-field-{{{ data.id }}}" aria-invalid="false" aria-describedby="nf-error-{{{ data.id }}}" class="{{{ data.renderClasses() }}} nf-element" {{{ data.renderPlaceholder() }}} {{{ data.maybeDisabled() }}} {{{ data.maybeDisableAutocomplete() }}} {{{ data.maybeInputLimit() }}}
+        aria-labelledby="nf-label-field-{{{ data.id }}}"
+
+        {{{ data.maybeRequired() }}}
+    >{{{ data.value }}}</textarea>
+</script>
+
+<!-- Rich Text Editor Templates -->
+<script id="tmpl-nf-rte-unlink-button" type="text/template">
+    <span class="dashicons dashicons-editor-unlink"></span>
+</script>
+
+<script id="tmpl-nf-rte-link-dropdown" type="text/template">
+    <div class="summernote-link">
+        URL
+        <input type="url" class="widefat code link-url"> <br />
+        Text
+        <input type="url" class="widefat code link-text"> <br />
+        <label>
+            <input type="checkbox" class="link-new-window"> {{{ nfi18n.fieldsTextareaOpenNewWindow }}}
+        </label>
+        <input type="button" class="cancel-link extra" value="Cancel">
+        <input type="button" class="insert-link extra" value="Insert">
+    </div>
+</script>
+<script id="tmpl-nf-field-submit" type="text/template">
+	<input id="nf-field-{{{ data.id }}}" class="{{{ data.renderClasses() }}} nf-element " type="button" value="{{{ data.label }}}" {{{ ( data.disabled ) ? 'disabled' : '' }}}>
+</script><script id='tmpl-nf-field-button' type='text/template'>
+    <button id="nf-field-{{{ data.id }}}" name="nf-field-{{{ data.id }}}" class="{{{ data.classes }}} nf-element">
+        {{{ data.label }}}
+    </button>
+</script></body>
+
+<!-- Mirrored from sman20batam.sch.id/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Feb 2025 02:30:35 GMT -->
+</html>
